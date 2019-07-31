@@ -21,7 +21,9 @@
     <cite>МВД сообщает:"Так не пойдёт".</cite>
     <a href="http://yandex.ru" target="_blank">Ссылка на сайт Яндекс</a>
     <blockquote>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        <img src = "img\1.jpg">Odio unde illum, eveniet ut quasi vitae temporibus quo beatae esse consequatur veniam assumenda dolor labore modi veritatis dolore! Ipsam, molestiae incidunt.</blockquote>
+        
+        Odio unde illum, eveniet ut quasi vitae temporibus quo beatae esse consequatur veniam assumenda dolor labore modi veritatis dolore! Ipsam, molestiae incidunt.</blockquote>
+        <img src = "img\1.jpg" width="300px">
     <ol type ='i' start = "1995" style = "margin-left: 50px;">
         <li>Опция 1</li>
         <li>Опция 2</li>
@@ -34,5 +36,88 @@
         <li>Опция 3</li>
         <li>Опция 4</li>
     </ul>
+    <br>
+    <table border = "1">
+        <tr>
+            <th>ФИО</th>
+            <th>Курс</th>
+            <th>Средний бал</th>
+        </tr>
+        <tr>
+            <td>Яценюк А.С</td>
+            <td>WD</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>Кислярский А.С</td>
+            <td>WD</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Воробьянинов И.М.</td>
+            <td>WD</td>
+            <td>4</td>
+        </tr>
+    </table>
+    <br>
+    <form  type = "GET" action = "index.php">
+        <label for = "userName">Логин</label><br>
+        <input id = "userName" type = "text" value = "" placeholder="введите логин"><br><br>
+        <label for = "userPass">Пароль</label><br>
+        <input id = "userPass" type = "password" placeholder="Введите пароль"><br><br>
+
+        <label for = "userRole">Роль</label>
+        <select id = "userRole" name = "role">
+            <option value = "1">admin</option>
+            <option value = "2">project manager</option>
+            <option value = "3">boss</option>
+        </select>
+        <br><br>
+        <select id = "userRole" multiple name = "role">
+            <option value = "1">admin</option>
+            <option value = "2">project manager</option>
+            <option value = "3">boss</option>
+            <option value = "1">admin</option>
+            <option value = "2">project manager</option>
+            <option value = "3">boss</option>
+        </select>
+        <br><br>
+
+        <label for = "check">Пароль</label><br>
+        <input name = "check1" type = "checkbox" checked> - checkbox 1<br>
+        <input name = "check2" type = "checkbox" > - checkbox 2<br>
+        <input name = "check3" type = "checkbox" > - checkbox 3<br>
+        <input name = "check4" type = "checkbox" > - checkbox 4<br>
+
+        <br><br>
+
+        <input name = "a1" type = "radio"> - radio 1 <br>
+        <input name = "a1" type = "radio"> - radio 2 <br>
+        <input name = "a1" type = "radio"> - radio 3 <br>
+        <input name = "a1" type = "radio"> - radio 4 <br>
+        
+        <br><br>
+
+        <input name = "a2" type = "radio"> - radio 5 <br>
+        <input name = "a2" type = "radio"> - radio 6 <br>
+        <input name = "a2" type = "radio"> - radio 7 <br>
+        <input name = "a2" type = "radio"> - radio 8 <br>
+
+        <input type = "color"> - color picker<br>
+        <input type = "number"> - number<br>
+        <input type = "tel"> - номер телефона<br>
+        <textarea rows ="10" cols = "15"></textarea>
+
+        <br><br>
+
+        Кнопки
+        <br><br>
+
+        <button>Simple Button</button><br><br>
+        <input type = "button" value = "Simple Button 2">
+        <input type = "reset">
+        <input type = "submit">
+
+    </form>
 </body>
 </html>
