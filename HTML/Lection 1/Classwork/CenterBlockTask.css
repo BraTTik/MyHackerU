@@ -1,0 +1,19 @@
+.s1{
+    background: #333;
+    padding: 20px;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #555;
+    border-bottom: 1px solid #555;
+}
+.flex-center  div h3{
+    text-transform: uppercase;
+    color: rgb(228, 151, 35);
+}
+.flex-center div{
+    color: white;
+    margin:20px;
+    text-align: justify;
+}
