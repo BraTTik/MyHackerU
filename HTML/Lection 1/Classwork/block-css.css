@@ -1,0 +1,99 @@
+body{
+    padding: 0px;
+    margin: 0;
+}
+
+.s1{
+    background: #ffccaa;
+    border: 1px solid #00ff00;
+}
+.s1 header, nav{
+    text-align: center;
+    background: white;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.s1 nav{
+
+}
+
+.s1 a{
+    text-decoration: none;
+    color: white;
+    background: #333;
+    border-radius: 3px;
+    padding: 3px 8px;
+}
+
+
+.s2{
+    background: #f1c40f;
+    border: 1px solid #333;
+    
+}
+
+.s2 .center-block{
+    margin: 0 auto;
+    width:200px;
+    background: black;
+    padding: 20px;
+    color: white;
+}
+
+.s3{
+    background: #7cf10f;
+    border: 1px solid #333;
+}
+
+.s3 .center-inline-block{
+    padding: 20px;
+    text-align: center;
+}
+
+.s3 .center-inline-block div{
+    display:inline-block;
+    text-align: left;
+    padding: 5px;
+    background: moccasin;
+    border-radius: 4px;
+    width: 100px;
+}
+
+.s3 .flex{
+    display: flex;
+    justify-content: center;
+}
+
+.s3 .flex div{
+    text-align: left;
+    padding: 5px;
+    background: moccasin;
+    border-radius: 4px;
+    width: 100px;
+    margin: 3px;
+}
+
+.s4{
+    background-color: aqua;
+    font-size: 80%;
+
+}
+
+.s4 .center-inline-block{
+    padding: 50px;
+    color: white;
+}
+
+.s4 .center-inline-block a{
+    background: black;
+    color: white;
+    padding: 40px 30px;
+    text-decoration: none;
+}
+
+.s4 .center-inline-block2{
+    width: 50%;
+    line-height: 100px;
+    padding:20px;
+}

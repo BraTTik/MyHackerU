@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href = "block-css.css" rel = "stylesheet">
+    <title>Блоки</title>
+</head>
+<body>
+    <h1>Blocks</h1>
+
+    <h2>Если элемент строчный или блочно-строчный</h2>
+
+    <section class = "s1">
+        <nav role = "navigation">
+            <a href = "#">One</a>
+            <a href = "#">Two</a>
+            <a href = "#">Three</a>
+            <a href = "#">Four</a>
+        </nav>
+    </section>
+
+    <h2>Если элемент является блочным</h2>
+
+    <section class = "s2">
+        <div class = "center-block">
+            Block in the center of the page
+        </div>
+    </section>
+
+    <h2>Если элемент является блочным + ещё несколько элементов</h2>
+
+    <section class = "s3">
+        <h3>Способ через строчно-блочные элементы</h3>
+        <div class = "center-inline-block">
+            <div>Блок 1</div>
+            <div>Блок 2</div>
+            <div>Блок 3</div>
+        </div>
+        <h3>Способ через flex</h3>
+        <div class="flex">
+            <div>Блок 1</div>
+            <div>Блок 2</div>
+            <div>Блок 3</div>
+        </div>
+    </section>
+
+    <h2>Центрирование по вертикали</h2>
+
+    <h3>Если элемент строчный или строчно-блочный</h3>
+
+    <section class="s4">
+        <h4>Вариант через padding</h4>
+        <div class="center-inline-block">
+            <a href = "#">We're</a>
+            <a href = "#">Centered</a>
+            <a href = "#">Bits of</a>
+            <a href = "#">Text</a>
+        </div>
+        <h4>Вариант через line-height</h4>
+        <div class="center-inline-block2">
+            Текчт отцентрированный по высоте
+        </div>
+        
+    </section>
+    
+
+</body>
+</html>
