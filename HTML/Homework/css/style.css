@@ -6,12 +6,17 @@ body{
     background-color: #f3f3f3;
     font-family: 'Source Sans Pro', sans-serif;
 }
+.wrapper{
+    width:960px;
+    margin:0px auto;
+}
 div, header{
     box-sizing: border-box;
 }
 .circle{
     border-radius: 50%;
 }
+
 /*  <!-- header --!>  */
 
 header{
@@ -27,19 +32,13 @@ header{
     background-color: rgba(90, 112, 91, 0.432);
 }
 #navbar{
-    position: relative;
-    height: 130px;
-}
-
-.logo{
-    position: absolute;
-    top:15px;
-    left:35px;
+    display: flex;
+    justify-content: space-between;
+    padding:10px 40px;
+    margin-bottom: 40px;
 }
 .menu{
-    position: absolute;
-    top:15px;
-    right: 35px;
+    display: flex;
 }
 .get-card-link:any-link{
     font-size:14px;
@@ -57,11 +56,54 @@ header{
     background-color: orangered;
     color:white;
 }
-.menu-button a:any-link{
-    font-size:20px;
+.menu-button div, .menu-button div::after, .menu-button div::before, .menu-button:hover, .menu-button.active, .menu-button.active div, .menu-button.active div::after, .menu-button.active div::before{
+    transition:all 1s ease-in;
+}
+.menu-button{
+    padding:8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.menu-button div{
+    width: 29px;
+    height: 5px;
+    background: #fff;
+}
+.menu-button:hover{
+    background:  rgb(90, 112, 91, 32);
+}
+.menu-button div::after{
+    display: block;
+    content: "";
+    width: 29px;
+    height: 5px;
+    background: #fff;
+    margin-top: 15px;
 
-    text-decoration: none;
-    color: white;
+    transform-origin: right;
+    transform:rotate(0deg);
+}
+.menu-button div::before{
+    display: block;
+    content: "";
+    width: 29px;
+    height: 5px;
+    background: #fff;
+    margin-top:-10px;
+
+    transform-origin: right;
+    transform:rotate(0deg);
+} 
+
+.menu-button.active div{
+    background-color: transparent;
+}
+.menu-button.active div:after{
+    transform:rotate(45deg);
+}
+.menu-button.active div:before{
+    transform:rotate(-45deg);
 }
 
 #header-content{
@@ -78,7 +120,7 @@ header{
     font-size: 12px;
     text-align: justify;
 }
-.price h1{
+.price h3{
     font-size:30px;
     font-weight: normal;
 }
@@ -91,6 +133,11 @@ header{
     background-color: orangered;
     font-size: 10px;
     line-height: 22px;
+    text-align: center;
+}
+.price div{
+    display: inline-block;
+    vertical-align: middle;
 }
 
 #search-section{

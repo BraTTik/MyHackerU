@@ -8,44 +8,56 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div  class = "green-fog">
-            <div id = "navbar">
-                <div class = "logo">Appetit Card</div>
-                <div class = "menu">
-                    <a href = "#" class = "get-card-link">GET YOUR CARD</a>
-                    <span class = "menu-button"><a href = "#">&#9776;</a></span>
+    <div class = "wrapper">
+        <header>
+            <div  class = "green-fog">
+                <div id = "navbar">
+                    <div class = "logo">Appetit Card</div>
+                    <div class = "menu">
+                        <a href = "#" class = "get-card-link">GET YOUR CARD</a>
+                        <div class = "menu-button">
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id = "header-content">
+                    <div class = "header-text">
+                        <h1>Dine Smarter. Save Money</h1>
+                        <p>Get an official 50% discount in 3400 Restaraunts and Cafe Across Germany.<br>
+                            It's easy as never before - just &euro;72 per year.
+                        </p>
+                    </div>
+                    <div class = "price circle">
+                        <div>
+                            <h3>&euro;72</h3>
+                            <p>per year</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id = "search-section">
+                    <form action = "#" method="GET">
+                        <input type = "search" class = "search-input" placeholder=" &#128269; Restaraunt Name">
+                        <select name = "distance">
+                            <option value = "any">Any</option>
+                            <option value = "10">10 km</option>
+                            <option value = "100">100 km</option>
+                            <option value = "150">150 km</option>
+                        </select>
+                        <input type = "submit" class = "search-button" value = "SEARCH">
+                    </form>
                 </div>
             </div>
+        </header>
+    </div>
+    <script>
+        var menuButton = document.querySelector('.menu-button');
+        menuButton.addEventListener('click', toggleActive);
 
-            <div id = "header-content">
-                <div class = "header-text">
-                    <h1>Dine Smarter. Save Money</h1>
-                    <p>Get an official 50% discount in 3400 Restaraunts and Cafe Across Germany.<br>
-                        It's easy as never before - just &euro;72 per year.
-                    </p>
-                </div>
-                <div class = "price circle">
-                    <h1>&euro;72</h1>
-                    <p>per year</p>
-                </div>
-            </div>
-
-            <div id = "search-section">
-                <form action = "#" method="GET">
-                    <input type = "search" class = "search-input" placeholder=" &#128269; Restaraunt Name">
-                    <select name = "distance">
-                        <option value = "any">Any</option>
-                        <option value = "10">10 km</option>
-                        <option value = "100">100 km</option>
-                        <option value = "150">150 km</option>
-                    </select>
-                    <input type = "submit" class = "search-button" value = "SEARCH">
-                </form>
-            </div>
-        </div>
-    </header>
-
-
+        function toggleActive(){
+            this.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
