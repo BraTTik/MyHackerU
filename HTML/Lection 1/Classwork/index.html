@@ -4,14 +4,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Занятие 1</title>
+    <style>
+        .first-div{
+            border:3px solid blue;
+            padding:10px;
+            margin:20px auto;
+            max-width: 400px;
+        }
+        .inline-span{
+            display:inline-block;
+            width:100px;
+        }
+        .container{
+            position:relative;
+        }
+        nav{
+            position: absolute;
+            width:200px;
+            left:0px;
+            top:50px;
+        }
+        section{
+            margin-left:200px;
+        }
+    </style>
 </head>
 <body>
+    <div class = "container">
+        <nav>
+            <ul>
+                <li>Главная</li>
+                <li>О компании</li>
+                <li>Продукты</li>
+                <li>Контакты</li>
+            </ul>
+        </nav>
+        <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptates architecto alias porro, dolorem animi qui enim, voluptatibus debitis doloremque dolor vel at id hic repudiandae beatae. Est, commodi quis!</section>
+        <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptates architecto alias porro, dolorem animi qui enim, voluptatibus debitis doloremque dolor vel at id hic repudiandae beatae. Est, commodi quis!</section>
+        <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque voluptates architecto alias porro, dolorem animi qui enim, voluptatibus debitis doloremque dolor vel at id hic repudiandae beatae. Est, commodi quis!</section>
+    </div>
     <h1>Привет мир!!</h1>
     <h2>Привет мир!!</h2>
     <h3>Привет мир!!</h3>
     <h4>Привет мир!!</h4>
     <h5>Привет мир!!</h5>
     <h6>Привет мир!!</h6>
+    <div class = "first-div">
+        Первый DIV <br><br>
+        <span class = "inline-span">Некоторое количество текста</span>
+        Div
+    </div>
+    <div class = "first-div">
+            Второй DIV <br><br>
+            Div
+    </div>
     <p>
         <b>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</b> <i>Repellendus ratione aspernatur reiciendis tempora eligendi dolores praesentium.</i> Similique explicabo, ut sapiente <u>quam magni est possimus velit voluptas</u>, reiciendis repellendus nulla! Et?
     </p>
