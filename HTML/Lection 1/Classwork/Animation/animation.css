@@ -1,0 +1,15 @@
+.cube{
+    width:50px;
+    height: 50px;
+    background-color: cornflowerblue;
+}
+
+@keyframes move{
+    0% {transform: translate(0);}
+    50% {transform: translate(200px, 0) rotate(60deg);}
+    70% {transform: translate(200px, 100px) rotate(160deg);}
+    100% {transform: translate(0) rotate(-360deg);}
+}
+.move{
+    animation: move 3s infinite ease-in-out;
+}
