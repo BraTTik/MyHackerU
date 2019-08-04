@@ -3,7 +3,7 @@
     padding: 0px;
 }
 body{
-    background-color: #f3f3f3;
+    background-color: #d3d3d3;
     font-family: 'Source Sans Pro', sans-serif;
 }
 .wrapper{
@@ -16,34 +16,89 @@ div, header{
 .circle{
     border-radius: 50%;
 }
-
+input:focus{
+    outline: transparent;
+}
+button:focus{
+    outline: transparent;
+}
 /*  <!-- header --!>  */
 
 header{
     width: 960px;
     margin: 0px auto;
-
+    
+    
     background-image: url("../img/restaraunt1.jpg");
     
     color:white;
-    text-align: center;
+
+    position: relative;
 }
 .active{
-    background:  rgb(90, 112, 91, 32);
+    background:  #27312a;
 }
 .green-fog{
     background-color: rgba(90, 112, 91, 0.432);
+    padding-top: 150px;
 }
 #navbar{
     display: flex;
     justify-content: space-between;
     padding:10px 40px;
-    margin-bottom: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.logo{
+    width:110px;
+    height: 35px;
+    background: url("../img/logo.png") no-repeat;
+    background-size: 100%;
 }
 .menu{
-    padding:0 55px 40px 55px;
-    background:rgb(90, 112, 91);
+    animation: close 1s linear 1;
+    margin: 0px auto;
+    position: fixed;
+    padding:0 55px 30px 55px;
+    overflow: hidden;
+    height: 70px;
+    z-index: 3;
 }
+.menu.open{
+    animation: open 1s linear 1;
+    position: fixed;
+    height: auto;
+    margin: 0px auto;
+    padding:0 55px 30px 55px;
+    background:#27312a;
+    z-index: 3;
+}
+@keyframes open{
+    0% {height: 70px;}
+    20% {height: 170px;}
+    40% {height: 270px;}
+    60%{height: 370px;}
+    80%{height: 470px;}
+    100% {height: auto;
+        background:#27312a;}
+}
+@keyframes close{
+    0% {height: auto;
+        background:#27312a;}
+    20% {height: 470px;
+        background:#27312a;}
+    40% {height: 370px;
+        background:#27312a;}
+    60%{height: 270px;
+        background:#27312a;}
+    80%{height: 170px;
+        background:#27312a;}
+    100% {height: 70px;
+        background: transparent;}
+}
+
+
 .link-menu{
     display: flex;
 }
@@ -78,7 +133,7 @@ header{
     background: #fff;
 }
 .menu-button:hover{
-    background:  rgb(90, 112, 91, 32);
+    background:  #27312a;
 }
 .menu-button div::after{
     display: block;
@@ -118,7 +173,7 @@ header{
     justify-content: flex-start;
 }
 .menu__left-panel{
-    margin-right:50px;
+    margin-right:70px;
 }
 .menu__left-panel_select{
     display: flex;
@@ -127,9 +182,9 @@ header{
     margin-bottom: 20px;
 }
 .menu__left-panel_select select{
-    background: rgb(90, 112, 91, 32);
+    background: #27312a;
     width:200px;
-    height: 200px;
+    height: 150px;
     border:0px;
     margin-bottom:20px;
 }
@@ -183,10 +238,10 @@ header{
 
 .menu__right-panel_center{
     width: 100%;
-    background-color: black;
+    background: url("../img/burgers3.jpg") no-repeat;
     color:white;
     text-align: center;
-    padding:5px;
+    padding-bottom:5px;
     margin-bottom:50px;
 }
 .menu__right-panel_center button{
@@ -213,6 +268,82 @@ header{
     font-size:14px;
     color: white;
 }
+
+.menu__right-panel_email{
+    border:1px solid white;
+    padding: 8px;
+    display:flex;
+    justify-content: space-between;
+}
+.menu__right-panel_email-input{
+    background-color: transparent;
+    font-size: 18px;
+    border-color: transparent;
+    color:#fff;
+}
+
+.menu__right-panel_email-input::placeholder{
+    color:#aaa;
+}
+.menu__right-panel_email-button{
+    background-color: transparent;
+    font-size: 30px;
+    border-color: transparent;
+    color:#aaa;
+    cursor: pointer;
+    line-height: 20px;
+}
+
+.menu__right-panel_social{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+
+}
+.menu__right-panel_social-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+.menu__right-panel_social-links a{
+    width:40px;
+    height: 40px;
+    margin-left: 5px;
+}
+    .social-facebook:any-link{
+        background-image: url("../img/social-icons/face.png");
+        background-size: 100%;
+    }
+    .social-facebook:hover{
+        background-image: url("../img/social-icons/face-active.png");
+        background-size: 100%;
+    }
+    .social-twitter:any-link{
+        background-image: url("../img/social-icons/twit.png");
+        background-size: 100%;
+    }
+    .social-twitter:hover{
+        background-image: url("../img/social-icons/twit-active.png");
+        background-size: 100%;
+    }
+    .social-insta:any-link{
+        background-image: url("../img/social-icons/insta.png");
+        background-size: 100%;
+    }
+    .social-insta:hover{
+        background-image: url("../img/social-icons/insta-active.png");
+        background-size: 100%;
+    }
+    .social-whatsapp:any-link{
+        background-image: url("../img/social-icons/wts.png");
+        background-size: 100%;
+    }
+    .social-whatsapp:hover{
+        background-image: url("../img/social-icons/wts-active.png");
+        background-size: 100%;
+    }
+
 
 #header-content{
     display: flex;
@@ -249,6 +380,8 @@ header{
 }
 
 #search-section{
+    display: flex;
+    justify-content: center;
     padding-bottom:70px;
     font-size: 0px;
 }
@@ -275,4 +408,101 @@ header{
 }
 
 
-/* <--- header ---> */
+/* <=== header ===> */
+
+
+/* <--- icons ---> */
+
+.icons{
+    display: flex;
+    justify-content: space-between;
+    margin:50px 0px;
+}
+.icons img{
+    width: 80px;
+}
+
+/* <=== icons ===> */
+
+/* <--- htu-section ---> */
+.htu-section h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.htu-section__block_head{
+    display: flex;
+}
+.htu-section__card-image{
+    width:650px;
+}
+
+.htu-section__topic{
+    color: white;
+    background: #27312a;
+    padding: 30px;
+    font-size: 14px;
+    line-height: 1.5em;
+    text-align: justify;
+}
+.htu-section__topic h3{
+    margin-bottom: 10px;
+}
+.htu-section__topic p{
+    margin-bottom: 20px;
+}
+.htu-section__topic a.get-card-link{
+    margin-top: 30px;
+    width: 90%;
+    text-align: center;
+}
+
+.htu-section__steps{
+    color: white;
+}
+.htu-section__steps{
+    display: flex;
+}
+.step-number{
+    position: absolute;
+    top:30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    line-height: 45px
+}
+.orange{
+    background-color: #ff4500;
+}
+.green{
+    background: #2d7c5c;
+}
+.darkgreen{
+    background-color: #27312a;
+}
+.step1{
+    position:relative;
+    background: url("../img/ipad.jpg");
+    background-position: -60px -40px;
+}
+.step2{
+    position: relative;
+    background: url("../img/pizza.jpg");
+}
+.step3{
+    position: relative;
+    background: url("../img/food.jpg");
+}
+.step_orange{
+    background-color: #ff440085;
+}
+.step_green{
+    background-color: #2d7c5c85;
+}
+.step_darkgreen{
+    background-color: #27312a85;
+}
+.step-size{
+    padding:130px 50px 40px 20px;
+}
+
+/* <=== htu-section ===> */

@@ -12,7 +12,7 @@
         <div class = "menu">
 
             <div id = "navbar">
-                <div class = "logo">Appetit Card</div>
+                <div class = "logo"></div>
                 <div class = "link-menu">
                     <a href = "#" class = "get-card-link">GET YOUR CARD</a>
                     <div class = "menu-button">
@@ -119,12 +119,19 @@
 
                     <div class = "menu__right-panel_footer">
                         <div class = "menu__right-panel_email-section">
-                            <p>Subscribe to our newsletter to be the first to hear about exclusive offers and discounts</p>
+                            <p>Subscribe to our newsletter to be the first to hear <br>
+                                 about exclusive offers and discounts</p>
                             <div class = menu__right-panel_email>
-                                <input type = "email" id = "email"><input type = "submit" value = "&#9993;">
+                                <input type = "email" class = "menu__right-panel_email-input" name = "email" placeholder="Email Address"><input type = "submit" value = "&#9993;" class = "menu__right-panel_email-button">
                             </div>
-                            <div class = "menu__right-panel_social">
-                                
+                        </div>
+                        <div class = "menu__right-panel_social">
+                            <p>Find us in social networks</p>
+                            <div class = "menu__right-panel_social-links">
+                                <a href = "#" class = "social-facebook"></a>
+                                <a href = "#" class = "social-twitter"></a>
+                                <a href = "#" class = "social-insta"></a>
+                                <a href = "#" class = "social-whatsapp"></a>
                             </div>
                         </div>
                     </div>
@@ -164,16 +171,72 @@
                 </div>
             </div>
         </header>
+        <div class = "icons">
+            <img src = "img/icons/blogo1.png">
+            <img src = "img/icons/blogo2.png">
+            <img src = "img/icons/blogo3.png">
+            <img src = "img/icons/blogo4.png">
+            <img src = "img/icons/blogo5.png">
+            <img src = "img/icons/blogo6.png">
+            <img src = "img/icons/blogo7.png">
+            <img src = "img/icons/blogo8.png">
+            <img src = "img/icons/blogo9.png">
+            <img src = "img/icons/blogo10.png">
+        </div>
+
+        <section class = "htu-section">
+            <h2>Using your AppetitCard is easy as 1, 2, 3...</h2>
+            <div class = "htu-section__block">
+                <div class = "htu-section__block_head">
+                    <div class = "htu-section__card-image">
+                        <img src = "img/card.png">
+                    </div>
+                    <div class = "htu-section__topic">
+                        <h3>50% off your total food bill!</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro ut ea ipsa? Suscipit distinctio, facere atque fuga minima iure sapiente molestiae voluptatem harum quo omnis maxime nemo assumenda quidem quos.
+                        </p>
+                        <h3>2 meals for the price of 1!</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti modi assumenda ipsa cumque amet cupiditate optio iure, vitae ipsam numquam quam rerum vel fugit odio delectus dicta cum quos officia!
+                        </p>
+                        <a href = "#" class = "get-card-link">TRY NOW</a>
+                    </div>
+                </div>
+            </div>
+            <div class = "htu-section__steps">
+                <div class="step1">
+                    <div class = "step_orange step-size">
+                        <h2 class = "step-number circle orange">1</h2>
+                        <h3>Search for restaraunt and choose where to dine</h3>
+                    </div>
+                </div>
+                <div class="step2">
+                    <div class="step_green step-size">
+                        <h2 class = "step-number circle green">2</h2>
+                        <h3>Make an advance booking mentioning AppetitCard</h3>
+                    </div>
+                </div>
+                <div class="step3">
+                    <div class = "step_darkgreen step-size">
+                        <h2 class = "step-number circle darkgreen">3</h2>
+                        <h3>Show your AppetitCard and enjoy your meal!</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
     </div>
     <script>
         var menuButton = document.querySelector('.menu-button');
         var navbar = document.getElementById('navbar');
+        var menu = document.querySelector('.menu');
 
         menuButton.addEventListener('click', toggleActive);
 
         function toggleActive(){
             menuButton.classList.toggle('active');
             navbar.classList.toggle('active');
+            menu.classList.toggle('open');
         }
     </script>
 </body>
