@@ -9,17 +9,131 @@
 </head>
 <body>
     <div class = "wrapper">
-        <header>
-            <div  class = "green-fog">
-                <div id = "navbar">
-                    <div class = "logo">Appetit Card</div>
-                    <div class = "menu">
-                        <a href = "#" class = "get-card-link">GET YOUR CARD</a>
-                        <div class = "menu-button">
-                            <div></div>
-                        </div>
+        <div class = "menu">
+
+            <div id = "navbar">
+                <div class = "logo">Appetit Card</div>
+                <div class = "link-menu">
+                    <a href = "#" class = "get-card-link">GET YOUR CARD</a>
+                    <div class = "menu-button">
+                        <div></div>
                     </div>
                 </div>
+            </div>
+
+            <div class = "menu-bar">
+                <div class = "menu__left-panel">
+                    <div class = "menu__left-panel_select">
+                        <h3>Restaraunts by city</h3>
+                        <select name = "rest-by-city" multiple>
+                            <option>City</option>
+                            <option>City</option>
+                            <option>City</option>
+                            <option>City</option>
+                            <option>City</option>
+                            <option>City</option>
+                            <option>City</option>
+                            <option>City</option>
+                            <option>City</option>
+                            <option>City</option>
+                            <option>City</option>
+                            <option>City</option>
+                            <option>City</option>
+                            <option>City</option>
+                        </select>
+                    </div>
+                    <div class = "menu__left-panel_select">
+                        <h3>Restaraunts by name</h3>
+                        <select name = "rest-by-city" multiple>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                            <option>Restaraunt name</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class = "menu__right-panel">
+                    <div class = "menu__right-panel_faq">
+                        <div>
+                            <h3>About us</h3>
+                            <ul>
+                                <li><a href = "#">Our company</a></li>
+                                <li><a href = "#">Customer testimonials</a></li>
+                                <li><a href = "#">Why we're different</a></li>
+                                <li><a href = "#">Our chosen charity</a></li>
+                                <li><a href = "#">Work for us</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>How can we help?</h3>
+                            <ul>
+                                <li><a href = "#">Contact us</a></li>
+                                <li><a href = "#">FAQs</a></li>
+                                <li><a href = "#">Restaraunt</a></li>
+                                <li><a href = "#">Opportunities</a></li>
+                                <li><a href = "#">For Buisiness</a></li>
+                                <li><a href = "#">Sitemap</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Get started</h3>
+                            <ul>
+                                <li><a href = "#">How To Use</a></li>
+                                <li><a href = "#">Buy an AppetitCard</a></li>
+                                <li><a href = "#">Buy an AppetitCard Gift</a></li>
+                                <li><a href = "#">UNiDAYS</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Stay involved</h3>
+                            <ul>
+                                <li><a href = "#">Newletter Sign Up</a></li>
+                                <li><a href = "#">Appetit blog</a></li>
+                                <li><a href = "#">Recommend</a></li>
+                                <li><a href = "#">Restaraunts</a></li>
+                                <li><a href = "#">Restaraunt Reviews</a></li>
+                                <li><a href = "#">AppetitCard+ Offers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class = "menu__right-panel_center">
+                        <h2>Save Money. Eat Out.</h2>
+                        <p>&euro;1 for 60 days. Includes tastecard+*</p>
+                        <button>TRY NOW</button>
+                        <p class = "note">&euro;1/60 days. Cancel trial anytime. Includes tastecard+. Renews at &euro;34.99(excluding tastecard+)</p>
+                    </div>
+
+                    <div class = "menu__right-panel_footer">
+                        <div class = "menu__right-panel_email-section">
+                            <p>Subscribe to our newsletter to be the first to hear about exclusive offers and discounts</p>
+                            <div class = menu__right-panel_email>
+                                <input type = "email" id = "email"><input type = "submit" value = "&#9993;">
+                            </div>
+                            <div class = "menu__right-panel_social">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <header>
+            <div  class = "green-fog">
                 
                 <div id = "header-content">
                     <div class = "header-text">
@@ -53,10 +167,13 @@
     </div>
     <script>
         var menuButton = document.querySelector('.menu-button');
+        var navbar = document.getElementById('navbar');
+
         menuButton.addEventListener('click', toggleActive);
 
         function toggleActive(){
-            this.classList.toggle('active');
+            menuButton.classList.toggle('active');
+            navbar.classList.toggle('active');
         }
     </script>
 </body>
