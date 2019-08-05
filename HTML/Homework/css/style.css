@@ -6,6 +6,17 @@ body{
     background-color: #d3d3d3;
     font-family: 'Source Sans Pro', sans-serif;
 }
+::selection{
+    background-color: #17a84f;
+}
+option:checked { 
+    background-color: #17a84f; 
+}
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top:50px;
+}
 .wrapper{
     width:960px;
     margin:0px auto;
@@ -62,8 +73,9 @@ header{
     position: fixed;
     padding:0 55px 30px 55px;
     overflow: hidden;
-    height: 70px;
+    height: 69px;
     z-index: 3;
+    background: #27312a56;
 }
 .menu.open{
     animation: open 1s linear 1;
@@ -75,7 +87,7 @@ header{
     z-index: 3;
 }
 @keyframes open{
-    0% {height: 70px;}
+    0% {height: 69px;}
     20% {height: 170px;}
     40% {height: 270px;}
     60%{height: 370px;}
@@ -95,7 +107,7 @@ header{
     80%{height: 170px;
         background:#27312a;}
     100% {height: 70px;
-        background: transparent;}
+        background: #27312a56;}
 }
 
 
@@ -188,6 +200,10 @@ header{
     border:0px;
     margin-bottom:20px;
 }
+.menu__left-panel_select select:focus{
+    outline: transparent;
+}
+
 
 .menu__left-panel_select option{
     margin-bottom:4px;
@@ -243,6 +259,9 @@ header{
     text-align: center;
     padding-bottom:5px;
     margin-bottom:50px;
+}
+.menu__right-panel_center h2{
+    margin-bottom:0px;
 }
 .menu__right-panel_center button{
     width: 200px;
@@ -416,7 +435,7 @@ header{
 .icons{
     display: flex;
     justify-content: space-between;
-    margin:50px 0px;
+    margin:30px 0px;
 }
 .icons img{
     width: 80px;
@@ -425,10 +444,11 @@ header{
 /* <=== icons ===> */
 
 /* <--- htu-section ---> */
-.htu-section h2{
-    text-align: center;
-    margin-bottom: 20px;
+.htu-section{
+    margin-bottom: 80px;
 }
+
+
 .htu-section__block_head{
     display: flex;
 }
@@ -468,7 +488,8 @@ header{
     left: 30px;
     width: 50px;
     height: 50px;
-    line-height: 45px
+    line-height: 45px;
+    margin-top:0px;
 }
 .orange{
     background-color: #ff4500;
@@ -487,6 +508,7 @@ header{
 .step2{
     position: relative;
     background: url("../img/pizza.jpg");
+    background-size:cover;
 }
 .step3{
     position: relative;
@@ -506,3 +528,100 @@ header{
 }
 
 /* <=== htu-section ===> */
+
+/* <--- map-section ---> */
+.map-section{
+    text-align: center;
+
+}
+.map-section__map{
+    height: 600px;
+    padding-top:155px;
+    margin-bottom:30px;
+
+    background: url("../img/map.PNG");
+    background-size: cover;
+}
+.map-section a.get-card-link{
+    width:300px;
+}
+
+/* <=== map-section ===> */
+
+/* <--- benefit-section ---> */
+
+.benefit-section{
+    text-align: center;
+}
+.benefits{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom:30px;
+}
+.benefit{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+
+    width:478px;
+    margin: 1px;
+    background: #fff;
+
+    padding:30px;
+}
+.benefit-logo{
+    background: #2d7c5c;
+    text-align: center;
+    color: white;
+    box-sizing: padding-box;
+    min-width: 80px;
+    padding: 10px 0;
+    margin-right: 40px;
+}
+.benefit_not{
+    text-decoration:line-through;
+}
+.benefit-section a.get-card-link{
+    width:300px;
+    text-align: center;
+}
+/* <=== benefit-section ===> */
+
+/* <--- footer ---> */
+footer{
+    background: #27312a;
+    color: white;
+    margin-top:50px;
+    padding:30px 40px;
+
+}
+.footer-menu{
+    display:flex;
+    border-bottom: #ffffff60 1px solid;
+}
+.logo-social{
+    display:flex;
+    justify-content: space-between;
+    padding-bottom:20px;
+    border-bottom: #ffffff60 1px solid;
+    margin-bottom:30px;
+}
+.footer_logo{
+    position:relative;
+}
+.footer_logo span{
+    position: absolute;
+    left: -9999px;
+}
+footer .menu__right-panel_email-section{
+    margin-left:50px;
+}
+footer .menu__right-panel_faq div{
+    width:115px;
+}
+.copyright{
+    text-align: center;
+    padding-top:40px;
+}
+/* <=== footer ===> */
