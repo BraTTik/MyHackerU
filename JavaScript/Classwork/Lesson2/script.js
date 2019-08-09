@@ -15,7 +15,7 @@ if(isNaN(num)){
     }
 } */
 
-var movies = [];
+/* var movies = [];
 
 do{
     var i = prompt('Введите свой любимый фильм или 0 для конца ввода');
@@ -40,3 +40,36 @@ while(movies.length != 0){
     console.log(movies.join(', '));
     movies.pop();
 }
+ */
+/*  var a = [];
+ var len = 9;
+ for(let i = 0; i < len; i++){
+     let b = [];
+     for(let j = 0; j < len; j++){
+        if(i == 0 || j == 0 || i == len-1 || j == len-1 || i == j || i + j == len - 1 || i == (len-1)/2  || j == (len-1)/2){
+            b.push('*');
+        }else{
+            b.push('-');
+        }
+     }
+     a.push(b);
+ }
+
+ console.log(a); */
+
+ var a = [];
+ var len = 10;
+ for(let i = 0; i < len; i++){
+     let b = [];
+     for(let j = 0; j < len; j++){
+        if(j <= i){
+            b.push('*');
+        }else{
+            b.push(' ');
+        }
+     }
+     a.push(b);
+ }
+
+ console.log(a);
+
