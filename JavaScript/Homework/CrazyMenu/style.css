@@ -1,0 +1,28 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+nav ul{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: rgba(194, 194, 194, 0.5);
+}
+
+.crazy-link{
+    padding: 15px;
+    text-decoration: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.crazy-link.active{
+}
+.crazy-link, .crazy-link.active{
+    transition: all ease-in 500ms;
+}
+.crazy-link:hover{
+    text-decoration: underline;
+}
