@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #f7f7f7;
+}
+
+.center {
+    width: 90%;
+    min-width: 1000px;
+    margin: auto;
+    position: relative;
+}
+
+.circle {
+    border-radius: 50%;
+}
+
+.logo-block {
+    padding: 15px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 1%;
+    left: 2%;
+}
+
+.logo {
+    width: 100px;
+    height: 30px;
+    background: url('/img/logo.png') no-repeat;
+    background-size: cover;
+}
+
+.logo-block_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 20%;
+}
+
+.menu_menu-opener {
+    cursor: pointer;
+    align-self: center;
+    padding: 15px;
+}
+
+.menu_menu-opener div {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+}
+
+.menu_menu-opener div::after {
+    display: block;
+    content: "";
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    transform: translateY(0.25rem);
+}
+
+.menu_menu-opener div::before {
+    display: block;
+    content: "";
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    transform: translateY(-0.4rem);
+}
+
+.link-get-card {
+    width: 60%;
+    text-align: center;
+    margin: 20px;
+}
+
+.link-get-card a:any-link {
+    display: block;
+    color: #ff4500;
+    text-decoration: none;
+    border: 1px solid #ff4500;
+    border-radius: 3px;
+    padding: 5px 15px;
+}
+
+.link-get-card a:hover {
+    color: white;
+    background-color: #ff4500;
+}
+
+.search-section {
+    display: flex;
+    justify-content: center;
+    font-size: 0px;
+}
+
+.search-section input,
+.search-section select {
+    height: 40px;
+}
+
+.search-section select {
+    width: 145px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.search-input {
+    width: 350px;
+    font-size: 17px;
+}
+
+.search-button {
+    font-size: 12px;
+    line-height: 43px;
+    border: 0px;
+    width: 130px;
+    color: white;
+    background-color: #17a84f;
+}

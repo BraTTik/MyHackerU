@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+}
+
+.carusel {
+    width: 50vw;
+    height: 50vh;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.carusel ul {
+    display: flex;
+    position: absolute;
+    list-style: none;
+    transition: left 1s cubic-bezier(0.2, -0.4, 0.7, 0.95);
+}
+
+.carusel li {
+    background-color: pink;
+    outline: 1px solid yellow;
+    min-width: 300px;
+}
+
+.arrow_left,
+.arrow_right {
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.trigger {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    user-select: none;
+}
+
+.slider {
+    position: relative;
+    width: 60vw;
+    margin: 0 auto;
+}
+
+#box {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+    position: absolute;
+}

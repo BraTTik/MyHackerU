@@ -1,0 +1,164 @@
+.main-content {
+    width: 90%;
+    margin: auto;
+}
+
+section {
+    margin: 50px 0;
+    text-align: center;
+}
+
+section h2 {
+    margin-bottom: 20px;
+}
+
+.arrow_left,
+.arrow_right {
+    margin: 10px;
+}
+
+.icons-section_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.icons img {
+    margin: 5px;
+}
+
+.steps-content_up {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.cards-image {
+    width: 66.67%;
+    background: url('/img/card.png') no-repeat;
+    background-size: cover;
+    min-height: 480px;
+}
+
+.step {
+    width: 33.33%;
+    line-height: 1.5em;
+}
+
+.step h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.green_step {
+    color: white;
+    font-size: 14px;
+    background-color: rgb(38, 51, 39);
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+}
+
+.step-content_down {
+    display: flex;
+}
+
+.step-format {
+    padding: 100px 30px 40px;
+    text-align: left;
+    color: white;
+    font-size: 18px;
+    position: relative;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.first-step {
+    background: url('/img/ipad.jpg') no-repeat;
+    background-size: cover;
+}
+
+.first-step .step-number {
+    background-color: #ff4400;
+}
+
+.orange-fog {
+    background-color: #ff44008a;
+}
+
+.second-step {
+    background: url('/img/pizza.jpg') no-repeat;
+    background-size: cover;
+}
+
+.second-step .step-number {
+    background-color: #358261;
+}
+
+.light-green-fog {
+    background-color: #3582618a;
+}
+
+.third-step {
+    background: url('/img/food.jpg') no-repeat;
+    background-size: cover;
+}
+
+.third-step .step-number {
+    background-color: rgb(38, 51, 39);
+}
+
+.dark-green-fog {
+    background-color: rgba(38, 51, 39, 0.7);
+}
+
+.map-section_content {
+    padding: 40px 50px 300px;
+    text-align: center;
+    background: url('/img/map.png') no-repeat;
+    background-size: cover;
+}
+
+.full-key_content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.key {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    margin: 1px;
+    width: 49%;
+    padding: 10px;
+    background-color: white;
+}
+
+.key-icon {
+    color: white;
+    font-weight: bold;
+    background-color: #358261;
+    line-height: 30px;
+    width: 50px;
+}
+
+.key-description {
+    padding: 30px;
+}

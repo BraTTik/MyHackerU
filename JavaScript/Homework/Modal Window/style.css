@@ -1,0 +1,37 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    display: none;
+}
+
+.modal_window {
+    width: 25vw;
+    border: 2px solid black;
+    position: absolute;
+    left: 35%;
+    transition: top .5s ease;
+    z-index: 3;
+    background-color: white;
+}
+
+.modal_close {
+    text-align: right;
+    background-color: cadetblue;
+    outline: 1px solid black;
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close_button {
+    cursor: pointer;
+    user-select: none;
+}
+
+.modal_content {
+    padding: 20px;
+}
