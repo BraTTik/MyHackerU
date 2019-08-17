@@ -5,7 +5,7 @@ let closeModalButton = document.querySelector('.close_button');
 
 
 let height = modalWindow.offsetHeight;
-let positionY = -500 - height;
+let positionY = 0 - height;
 modalWindow.style.top = positionY + 'px';
 
 let blockPosition = 0 + window.pageYOffset;
@@ -16,7 +16,7 @@ function showModal() {
 }
 
 function closeModal() {
-    positionY = -500 - positionY - height;
+    positionY = 0 - positionY - height;
     modalWindow.style.top = positionY + 'px';
 }
 
@@ -32,13 +32,15 @@ function unblockContent() {
 showModalButton.addEventListener('click', function() {
     showModal();
     blockContent();
+    document.body.style.overflow = 'hidden';
 });
 closeModalButton.addEventListener('click', function() {
     closeModal();
     unblockContent();
+    document.body.style.overflow = '';
 });
 
 window.addEventListener('scroll', function() {
-    modalElem.style.top = blockPosition + window.pageYOffset + 'px';
+    modalElem.style.top = blockPosition + pageYOffset + 'px';
     modalWindow.style.top = positionY + pageYOffset + 'px';
 });

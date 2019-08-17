@@ -32,6 +32,10 @@
     user-select: none;
 }
 
+.close_button:hover {
+    color: white;
+}
+
 .modal_content {
     padding: 20px;
 }
