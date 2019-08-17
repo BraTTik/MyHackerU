@@ -2,12 +2,12 @@
     function() {
         let modalElem = document.querySelector('.modal');
         let modalWindow = document.querySelector('.modal_window')
-        let showModalButton = document.querySelector('.modal_button');
+        let showModalButton = document.querySelectorAll('.modal_button');
         let closeModalButton = document.querySelector('.close_button');
 
 
         let height = modalWindow.offsetHeight;
-        let positionY = 0 - height;
+        let positionY = -1000 - height;
         modalWindow.style.top = positionY + 'px';
 
         let blockPosition = 0 + window.pageYOffset;
@@ -18,7 +18,7 @@
         }
 
         function closeModal() {
-            positionY = 0 - positionY - height;
+            positionY = -1000 - positionY - height;
             modalWindow.style.top = positionY + 'px';
         }
 
@@ -31,7 +31,12 @@
             modalElem.style.display = 'none';
         }
 
-        showModalButton.addEventListener('click', function() {
+        showModalButton[0].addEventListener('click', function() {
+            showModal();
+            blockContent();
+            document.body.style.overflow = 'hidden';
+        });
+        showModalButton[1].addEventListener('click', function() {
             showModal();
             blockContent();
             document.body.style.overflow = 'hidden';
