@@ -7,19 +7,21 @@
 
 
         let height = modalWindow.offsetHeight;
-        let positionY = -1000 - height;
+        let positionY = 0 - height;
         modalWindow.style.top = positionY + 'px';
 
-        let blockPosition = 0 + window.pageYOffset;
+        let blockPosition = 0;
 
         function showModal() {
             positionY = 100;
             modalWindow.style.top = positionY + pageYOffset + 'px';
+            modalWindow.style.opacity = 1;
         }
 
         function closeModal() {
-            positionY = -1000 - positionY - height;
+            positionY = 0 - positionY - height;
             modalWindow.style.top = positionY + 'px';
+            modalWindow.style.opacity = 0;
         }
 
         function blockContent() {
