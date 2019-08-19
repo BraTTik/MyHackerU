@@ -8,6 +8,7 @@ header {
 .green-fog {
     background-color: rgba(38, 51, 39, 0.658);
     padding: 40px;
+    padding-top: 10px;
     padding-bottom: 80px;
 }
 
