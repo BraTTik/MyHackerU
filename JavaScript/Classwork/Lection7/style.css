@@ -1,0 +1,26 @@
+.image {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.content ul {
+    display: flex;
+    justify-items: stretch;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+.content li {
+    width: 210px;
+    margin: 10px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px;
+    background-color: blue;
+    outline: 2px solid darkblue;
+    cursor: pointer;
+}

@@ -1,0 +1,15 @@
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.post {
+    width: 190px;
+    padding: 10px;
+}
+
+th {
+    text-align: right;
+}
