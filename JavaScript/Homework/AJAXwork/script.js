@@ -17,8 +17,7 @@ function loadUserInfo(idUser) {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            tempData = JSON.parse(this.responseText);
-            AJAXHandlerUserInfo(tempData);
+            AJAXHandlerUserInfo(JSON.parse(this.responseText));
         }
     }
     xhttp.open('GET', `https://jsonplaceholder.typicode.com/users?id=${idUser}`, true);
@@ -72,6 +71,10 @@ function AJAXHandlerUserInfo(data) {
 
 loadButton.addEventListener('click', function() {
     let userId = document.getElementById('userID').value;
+    if (isNaN(userId) || userId > 10) {
+        alert('Такого пользователя нет');
+        return;
+    }
     loadUserInfo(userId);
     loadPosts(userId);
 });
