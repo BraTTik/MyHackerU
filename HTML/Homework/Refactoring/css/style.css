@@ -21,10 +21,15 @@ body {
 }
 
 .logo-block {
-    padding: 5px 15px;
+    padding: 0px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: transparent;
+}
+
+.logo-block.active {
+    background-color: #27312a;
 }
 
 .logo {
@@ -69,6 +74,29 @@ body {
     height: 2px;
     background-color: white;
     transform: translateY(-0.4rem);
+}
+
+.menu_menu-opener div.active {
+    background-color: transparent;
+}
+
+.menu_menu-opener div.active::after {
+    transform: rotate(45deg) translate(-0.1rem);
+}
+
+.menu_menu-opener div.active::before {
+    transform: rotate(-45deg) translate(-0.1rem);
+}
+
+.menu_menu-opener div,
+.menu_menu-opener div.active,
+.menu_menu-opener div::after,
+.menu_menu-opener div.active::after,
+.menu_menu-opener div::before,
+.menu_menu-opener div.active::before,
+.logo-block,
+.logo-block.active {
+    transition: all .5s ease-in;
 }
 
 .link-get-card {
@@ -177,6 +205,7 @@ a.whatsapp_link:hover {
     display: flex;
     align-items: flex-start;
     color: #ff4500;
+    text-align: left;
 }
 
 .menu ul {
@@ -204,7 +233,8 @@ a.whatsapp_link:hover {
 }
 
 .email-block {
-    width: 30%;
+    width: 35%;
+    text-align: left;
 }
 
 .email-input {
