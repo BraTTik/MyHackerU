@@ -1,0 +1,47 @@
+@mixin large-text
+    font-family: Arial, Helvetica, sans-serif
+    font-size: 20px
+    font-weight: bold
+
+@mixin flexCenter
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin square ($size)
+    width: $size
+    height: $size
+    background-color: yellow
+ul
+    display: flex
+    flex-direction: column
+    align-items: center
+    list-style: none
+
+$base-color: rgb(33, 50, 33)
+$newYearFlg: 0
+
+@for $i from 1 through 10
+    li:nth-child(#{$i})
+        @include square($size: 10px + round(random() * 100))
+        border-radius: $i * 5%
+        margin-bottom: 20px
+        background-color: adjust-color($base-color, $red: 5*$i, $green: 5*$i, $blue: 3*$i)
+
+.newYearTheme
+    width: 100px
+    height: 100px
+
+@if $newYearFlg == 0
+    .newYearTheme
+        background-color: green
+@else
+    .newYearTheme
+        background-color: red
+
+.color-test
+    background-color: darkblue
+    color: complement(darkblue)
+
+    
+

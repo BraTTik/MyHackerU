@@ -1,0 +1,21 @@
+.services
+    @extend %section
+    background-color: #EBEBEB
+    .specials
+        display: flex
+        flex-wrap: wrap
+        .special_item
+            width: 30%
+            background: url(/img/bg-special.png)
+            background-size: cover
+            margin-bottom: 5%
+            font-size: 22rem
+            font-family: $headerFont
+            color: white
+            cursor: pointer
+            &:not(:nth-child(3n))
+                margin-right: 5%
+            .filter
+                padding: 70% 8% 8%
+            &:hover .filter
+                background-color: rgba(0, 95, 163, 0.65)

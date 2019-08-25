@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Andika&display=swap')
+
+$accentColor: #005FA3
+$headerFont: Merriweather
+$commonFont: Andika
+
+
+@mixin centerContent
+    margin: 0 auto
+    width: 70%
+
+@mixin displayFlex
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+%button
+    width: 200px
+    color: white
+    padding: 10px 20px
+    font-family: $commonFont
+    font-size: 13rem
+    text-align: center
+    background-color: $accentColor
+    cursor: pointer
+
+%section
+    padding: 5% 0
+    h3
+        font-size: 20rem
+        font-family: $commonFont
+        color: #BDBDBD
+        margin-bottom: 2%
+    h2
+        font-size: 40rem
+        font-family: $headerFont
+        margin-bottom: 5%
+    span
+        color: $accentColor
+    p
+        color: black
+        font-size: 18rem
+        font-family: $commonFont

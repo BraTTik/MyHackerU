@@ -1,0 +1,78 @@
+header
+    .slider
+        overflow: hidden
+        width: 100vw
+        height: 40vw
+        position: relative
+        .center
+            .slider-panel
+                position: absolute
+                bottom: 3%
+                width: 70vw
+                height: 65px
+                display: flex
+                justify-content: space-between
+                align-items: center
+                font-size: 20rem
+                .position ul
+                    display: flex
+                    color: rgba(255, 255, 255, 0.4)
+                    list-style: disc
+                    li
+                        margin-right: 10%
+                        width: 30px
+                        transition: color 1s ease
+                    .onscreen
+                        font-weight: bold
+                        color: rgba(255, 255, 255, 0.9)
+                .slider_buttons
+                    display: flex
+                    .slider_prev-button, .slider_next-button
+                        width: 50px
+                        line-height: 50px
+                        color: white
+                        font-size: 25rem
+                        text-align: center
+                        cursor: pointer
+                    .slider_prev-button
+                        background-color: rgba(255, 255, 255, 0.3)
+                    .slider_next-button
+                        background-color: rgba(255, 255, 255, 0.6)
+        h2
+            font-family: $headerFont
+            font-size: 36rem
+            color: white
+            width: 50%
+            padding-top: 20%
+    .slider ul
+        display: flex
+        list-style: none
+        position: absolute
+        left: 0vw
+        transition: left 1s ease
+        .slide
+            width: 100vw
+            height: 40vw
+        .filter
+            width: 100%
+            height: 100%
+            background-color: #00000088
+        .first
+            background: url('/img/bg-header1.jpg')
+            background-size: cover
+        .second
+            background: url('/img/bg-header2.jpg')
+            background-size: cover
+            background-position-y: -150px
+        .third
+            background: url('/img/bg-header3.jpg')
+            background-size: cover
+            background-position-y: -150px
+    
+    .button
+        @extend %button
+        margin: 5% 0
+
+
+
+            

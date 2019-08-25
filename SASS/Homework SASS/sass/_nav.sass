@@ -1,0 +1,48 @@
+nav
+    height: 100rem
+    padding: 20rem 0
+    .center
+        @include displayFlex
+        
+        .logo
+            @include displayFlex
+            font-family: $headerFont
+            font-size: 30rem
+            font-weight: bold
+            color: $accentColor
+
+            img
+                margin-right: 30%
+                width: 50rem
+        .navigation
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            align-self: stretch
+            width: 60%
+            ul
+                @include displayFlex
+                list-style: none
+            .contacts
+                font-family: $commonFont
+                font-size: 12rem
+                li
+                    white-space: nowrap
+                    &:not(:last-child)
+                        margin-right: 3%
+                    
+                .fas, .far
+                    color: $accentColor
+                    margin-right: 5%
+            .menu
+                
+                a:any-link
+                    font-family: $commonFont
+                    font-size: 13rem
+                    font-weight: bold
+                    color: black
+                    text-decoration: none
+                    text-transform: uppercase
+                a:hover
+                    text-decoration: underline
+                    
