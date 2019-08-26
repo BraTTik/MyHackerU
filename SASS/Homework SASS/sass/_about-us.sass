@@ -1,2 +1,36 @@
 .about-us
     @extend %section
+    .content
+        display: flex
+        justify-content: space-between
+        & > div
+            width: 46%
+        .additional-content
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+            h2
+                font-family: $commonFont
+                margin-bottom: 0
+            p
+                font-size: 14rem
+            a:any-link
+                font-family: $commonFont
+                color: $accentColor
+            .flexColumn
+                width: 46%
+                height: 50%
+                padding: 7%
+                background-color: #ebebeb
+                display: flex
+                flex-direction: column
+                justify-content: space-between
+                margin-bottom: 7%
+            .flexColumn:hover
+                background-color: $accentColor
+                color: white
+                p
+                    color: white
+                & a:any-link
+                    color: white
+

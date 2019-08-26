@@ -1,0 +1,56 @@
+footer
+    font-size: 16rem
+    background: url('/img/bg-header1.jpg')
+    background-size: cover
+    color: #ffffff
+    font-family: $commonFont
+    .filter
+        background-color: #00000088
+        padding: 10% 0
+    h2
+        font-family: $headerFont
+        font-size: 36rem
+        margin-bottom: 10%
+    p
+        margin-bottom: 15%
+    .center
+        display: flex
+        justify-content: space-between
+        & > div
+            width: 46%
+    .contacts-block
+        font-size: 18rem
+        .contacts
+            ul
+                display: flex
+                justify-content: space-between
+                list-style: none inside
+    input, textarea
+            background-color: transparent
+            border: transparent
+            border-bottom: 1px solid #ffffff   
+            color: #ffffff
+            font-size: 16rem
+    textarea
+        width: 70%
+        height: 50%
+        resize: none
+    .message-form
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-self: stretch
+        .name-block
+            display: flex
+            justify-content: space-between
+            margin-bottom: 5%
+            .name
+                width: 48%
+        .message-block
+            align-self: stretch
+            height: 200px
+    .send-button
+        @extend %button
+        align-self: flex-end
+    
+                    

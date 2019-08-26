@@ -1,7 +1,7 @@
-@import "_slider"
+
 header
     .slider
-        @extend %slider
+        @include slider(100vw, 40vw, absolute, 70vw)
         .filter
             width: 100%
             height: 100%
@@ -23,6 +23,16 @@ header
             color: white
             width: 50%
             padding-top: 20%
+        .slider_prev-button
+            background-color: rgba(255, 255, 255, 0.3)
+        .slider_next-button
+            background-color: rgba(255, 255, 255, 0.6)
+        .position ul
+            color: rgba(255, 255, 255, 0.4)
+            .onscreen
+                color: rgba(255, 255, 255, 0.9)
+
+
     
     .button
         @extend %button

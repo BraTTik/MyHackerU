@@ -1,0 +1,70 @@
+.feedback
+    @extend %section
+    .slider
+        @include slider(100%, 300px, static, 100%)
+        .slide
+            min-width: 300px
+        .slide-content
+            display: flex
+            justify-content: space-between
+            img
+                width: 20%
+    .slider-panel
+        height: 65px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        font-size: 20rem
+        .position ul
+            display: flex
+            list-style: disc
+            list-style-position: inside
+            color: rgba(0, 95, 163, 0.4)
+            li
+                margin-right: 10%
+                width: 30px
+                transition: color 1s ease
+            .onscreen
+                font-weight: bold
+                color: rgba(0, 95, 163, 0.9)
+        .slider_buttons
+            display: flex
+            .slider_prev-button, .slider_next-button
+                width: 50px
+                line-height: 50px
+                color: white
+                font-size: 25rem
+                text-align: center
+                cursor: pointer
+                user-select: none
+            .slider_prev-button
+                background-color: rgba(0, 95, 163, 0.3)
+            .slider_next-button
+                background-color: rgba(0, 95, 163, 0.6)
+    .slide
+        display: flex
+        align-items: stretch
+    .slide-content
+        display: flex
+        align-items: stretch
+    .post
+        padding: 5%
+        background-color: #ebebeb
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        height: 100%
+        align-self: stretch
+        p
+            font-size: 14rem
+            font-family: $commonFont
+        .post_author
+            display: flex
+            .author_name
+                margin-left: 3%
+            img
+                width: 10%
+                border-radius: 50%
+            h4
+                font-size: 20rem
+                font-family: $commonFont

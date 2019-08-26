@@ -1,0 +1,23 @@
+
+.partners
+    @extend %section
+    background-color: #ebebeb
+    .slider
+        @include slider(100%, 180px, absolute, 100%)
+        .slide
+            min-width: 300px
+        .slide-content
+            display: flex
+            justify-content: space-between
+            img
+                width: 20%
+    .slider-panel
+        .position ul
+            color: rgba(0, 95, 163, 0.4)
+        .onscreen
+            color: rgba(0, 95, 163, 0.9)
+        .slider_prev-button
+            background-color: rgba(0, 95, 163, 0.3)
+        .slider_next-button
+            background-color: rgba(0, 95, 163, 0.6)
+       

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Andika&display=swap");
-header .button {
-  width: 200px;
+header .button, footer .send-button {
+  width: 150px;
   color: white;
   padding: 10px 20px;
   font-family: Andika;
@@ -10,20 +10,20 @@ header .button {
   background-color: #005FA3;
   cursor: pointer; }
 
-.services, .about-us {
+.services, .about-us, .partners, .feedback {
   padding: 5% 0; }
-  .services h3, .about-us h3 {
+  .services h3, .about-us h3, .partners h3, .feedback h3 {
     font-size: 20rem;
     font-family: Andika;
     color: #BDBDBD;
     margin-bottom: 2%; }
-  .services h2, .about-us h2 {
+  .services h2, .about-us h2, .partners h2, .feedback h2 {
     font-size: 40rem;
     font-family: Merriweather;
     margin-bottom: 5%; }
-  .services span, .about-us span {
+  .services span, .about-us span, .partners span, .feedback span {
     color: #005FA3; }
-  .services p, .about-us p {
+  .services p, .about-us p, .partners p, .feedback p {
     color: black;
     font-size: 18rem;
     font-family: Andika; }
@@ -80,7 +80,7 @@ nav {
 header .slider {
   overflow: hidden;
   width: 100vw;
-  height: 40vw;
+  min-height: 40vw;
   position: relative; }
   header .slider ul {
     display: flex;
@@ -102,15 +102,14 @@ header .slider {
     font-size: 20rem; }
     header .slider .slider-panel .position ul {
       display: flex;
-      color: rgba(255, 255, 255, 0.4);
-      list-style: disc; }
+      list-style: disc;
+      list-style-position: inside; }
       header .slider .slider-panel .position ul li {
         margin-right: 10%;
         width: 30px;
         transition: color 1s ease; }
       header .slider .slider-panel .position ul .onscreen {
-        font-weight: bold;
-        color: rgba(255, 255, 255, 0.9); }
+        font-weight: bold; }
     header .slider .slider-panel .slider_buttons {
       display: flex; }
       header .slider .slider-panel .slider_buttons .slider_prev-button, header .slider .slider-panel .slider_buttons .slider_next-button {
@@ -119,33 +118,37 @@ header .slider {
         color: white;
         font-size: 25rem;
         text-align: center;
-        cursor: pointer; }
-      header .slider .slider-panel .slider_buttons .slider_prev-button {
-        background-color: rgba(255, 255, 255, 0.3); }
-      header .slider .slider-panel .slider_buttons .slider_next-button {
-        background-color: rgba(255, 255, 255, 0.6); }
-
-header .slider .filter {
-  width: 100%;
-  height: 100%;
-  background-color: #00000088; }
-header .slider .first {
-  background: url("/img/bg-header1.jpg");
-  background-size: cover; }
-header .slider .second {
-  background: url("/img/bg-header2.jpg");
-  background-size: cover;
-  background-position-y: -150px; }
-header .slider .third {
-  background: url("/img/bg-header3.jpg");
-  background-size: cover;
-  background-position-y: -150px; }
-header .slider h2 {
-  font-family: Merriweather;
-  font-size: 36rem;
-  color: white;
-  width: 50%;
-  padding-top: 20%; }
+        cursor: pointer;
+        user-select: none; }
+  header .slider .filter {
+    width: 100%;
+    height: 100%;
+    background-color: #00000088; }
+  header .slider .first {
+    background: url("/img/bg-header1.jpg");
+    background-size: cover; }
+  header .slider .second {
+    background: url("/img/bg-header2.jpg");
+    background-size: cover;
+    background-position-y: -150px; }
+  header .slider .third {
+    background: url("/img/bg-header3.jpg");
+    background-size: cover;
+    background-position-y: -150px; }
+  header .slider h2 {
+    font-family: Merriweather;
+    font-size: 36rem;
+    color: white;
+    width: 50%;
+    padding-top: 20%; }
+  header .slider .slider_prev-button {
+    background-color: rgba(255, 255, 255, 0.3); }
+  header .slider .slider_next-button {
+    background-color: rgba(255, 255, 255, 0.6); }
+  header .slider .position ul {
+    color: rgba(255, 255, 255, 0.4); }
+    header .slider .position ul .onscreen {
+      color: rgba(255, 255, 255, 0.9); }
 header .button {
   margin: 5% 0; }
 
@@ -170,6 +173,272 @@ header .button {
       .services .specials .special_item:hover .filter {
         background-color: rgba(0, 95, 163, 0.65); }
 
+.about-us .content {
+  display: flex;
+  justify-content: space-between; }
+  .about-us .content > div {
+    width: 46%; }
+  .about-us .content .additional-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .about-us .content .additional-content h2 {
+      font-family: Andika;
+      margin-bottom: 0; }
+    .about-us .content .additional-content p {
+      font-size: 14rem; }
+    .about-us .content .additional-content a:any-link {
+      font-family: Andika;
+      color: #005FA3; }
+    .about-us .content .additional-content .flexColumn {
+      width: 46%;
+      height: 50%;
+      padding: 7%;
+      background-color: #ebebeb;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 7%; }
+    .about-us .content .additional-content .flexColumn:hover {
+      background-color: #005FA3;
+      color: white; }
+      .about-us .content .additional-content .flexColumn:hover p {
+        color: white; }
+      .about-us .content .additional-content .flexColumn:hover a:any-link {
+        color: white; }
+
+.partners {
+  background-color: #ebebeb; }
+  .partners .slider {
+    overflow: hidden;
+    width: 100%;
+    min-height: 180px;
+    position: relative; }
+    .partners .slider ul {
+      display: flex;
+      list-style: none;
+      position: absolute;
+      left: 0vw;
+      transition: left 1s ease; }
+      .partners .slider ul li {
+        width: 100%;
+        height: 180px; }
+    .partners .slider .slider-panel {
+      position: absolute;
+      bottom: 3%;
+      width: 100%;
+      height: 65px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 20rem; }
+      .partners .slider .slider-panel .position ul {
+        display: flex;
+        list-style: disc;
+        list-style-position: inside; }
+        .partners .slider .slider-panel .position ul li {
+          margin-right: 10%;
+          width: 30px;
+          transition: color 1s ease; }
+        .partners .slider .slider-panel .position ul .onscreen {
+          font-weight: bold; }
+      .partners .slider .slider-panel .slider_buttons {
+        display: flex; }
+        .partners .slider .slider-panel .slider_buttons .slider_prev-button, .partners .slider .slider-panel .slider_buttons .slider_next-button {
+          width: 50px;
+          line-height: 50px;
+          color: white;
+          font-size: 25rem;
+          text-align: center;
+          cursor: pointer;
+          user-select: none; }
+    .partners .slider .slide {
+      min-width: 300px; }
+    .partners .slider .slide-content {
+      display: flex;
+      justify-content: space-between; }
+      .partners .slider .slide-content img {
+        width: 20%; }
+  .partners .slider-panel .position ul {
+    color: rgba(0, 95, 163, 0.4); }
+  .partners .slider-panel .onscreen {
+    color: rgba(0, 95, 163, 0.9); }
+  .partners .slider-panel .slider_prev-button {
+    background-color: rgba(0, 95, 163, 0.3); }
+  .partners .slider-panel .slider_next-button {
+    background-color: rgba(0, 95, 163, 0.6); }
+
+.feedback .slider {
+  overflow: hidden;
+  width: 100%;
+  min-height: 300px;
+  position: relative; }
+  .feedback .slider ul {
+    display: flex;
+    list-style: none;
+    position: absolute;
+    left: 0vw;
+    transition: left 1s ease; }
+    .feedback .slider ul li {
+      width: 100%;
+      height: 300px; }
+  .feedback .slider .slider-panel {
+    position: static;
+    bottom: 3%;
+    width: 100%;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20rem; }
+    .feedback .slider .slider-panel .position ul {
+      display: flex;
+      list-style: disc;
+      list-style-position: inside; }
+      .feedback .slider .slider-panel .position ul li {
+        margin-right: 10%;
+        width: 30px;
+        transition: color 1s ease; }
+      .feedback .slider .slider-panel .position ul .onscreen {
+        font-weight: bold; }
+    .feedback .slider .slider-panel .slider_buttons {
+      display: flex; }
+      .feedback .slider .slider-panel .slider_buttons .slider_prev-button, .feedback .slider .slider-panel .slider_buttons .slider_next-button {
+        width: 50px;
+        line-height: 50px;
+        color: white;
+        font-size: 25rem;
+        text-align: center;
+        cursor: pointer;
+        user-select: none; }
+  .feedback .slider .slide {
+    min-width: 300px; }
+  .feedback .slider .slide-content {
+    display: flex;
+    justify-content: space-between; }
+    .feedback .slider .slide-content img {
+      width: 20%; }
+.feedback .slider-panel {
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20rem; }
+  .feedback .slider-panel .position ul {
+    display: flex;
+    list-style: disc;
+    list-style-position: inside;
+    color: rgba(0, 95, 163, 0.4); }
+    .feedback .slider-panel .position ul li {
+      margin-right: 10%;
+      width: 30px;
+      transition: color 1s ease; }
+    .feedback .slider-panel .position ul .onscreen {
+      font-weight: bold;
+      color: rgba(0, 95, 163, 0.9); }
+  .feedback .slider-panel .slider_buttons {
+    display: flex; }
+    .feedback .slider-panel .slider_buttons .slider_prev-button, .feedback .slider-panel .slider_buttons .slider_next-button {
+      width: 50px;
+      line-height: 50px;
+      color: white;
+      font-size: 25rem;
+      text-align: center;
+      cursor: pointer;
+      user-select: none; }
+    .feedback .slider-panel .slider_buttons .slider_prev-button {
+      background-color: rgba(0, 95, 163, 0.3); }
+    .feedback .slider-panel .slider_buttons .slider_next-button {
+      background-color: rgba(0, 95, 163, 0.6); }
+.feedback .slide {
+  display: flex;
+  align-items: stretch; }
+.feedback .slide-content {
+  display: flex;
+  align-items: stretch; }
+.feedback .post {
+  padding: 5%;
+  background-color: #ebebeb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-self: stretch; }
+  .feedback .post p {
+    font-size: 14rem;
+    font-family: Andika; }
+  .feedback .post .post_author {
+    display: flex; }
+    .feedback .post .post_author .author_name {
+      margin-left: 3%; }
+    .feedback .post .post_author img {
+      width: 10%;
+      border-radius: 50%; }
+    .feedback .post .post_author h4 {
+      font-size: 20rem;
+      font-family: Andika; }
+
+footer {
+  font-size: 16rem;
+  background: url("/img/bg-header1.jpg");
+  background-size: cover;
+  color: #ffffff;
+  font-family: Andika; }
+  footer .filter {
+    background-color: #00000088;
+    padding: 10% 0; }
+  footer h2 {
+    font-family: Merriweather;
+    font-size: 36rem;
+    margin-bottom: 10%; }
+  footer p {
+    margin-bottom: 15%; }
+  footer .center {
+    display: flex;
+    justify-content: space-between; }
+    footer .center > div {
+      width: 46%; }
+  footer .contacts-block {
+    font-size: 18rem; }
+    footer .contacts-block .contacts ul {
+      display: flex;
+      justify-content: space-between;
+      list-style: none inside; }
+  footer input, footer textarea {
+    background-color: transparent;
+    border: transparent;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: 16rem; }
+  footer textarea {
+    width: 70%;
+    height: 50%;
+    resize: none; }
+  footer .message-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: stretch; }
+    footer .message-form .name-block {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5%; }
+      footer .message-form .name-block .name {
+        width: 48%; }
+    footer .message-form .message-block {
+      align-self: stretch;
+      height: 200px; }
+  footer .send-button {
+    align-self: flex-end; }
+
+.copyright {
+  padding: 1% 0;
+  font-size: 12rem;
+  font-family: Andika; }
+  .copyright .center {
+    display: flex;
+    justify-content: space-around; }
+
 html {
   font-size: 1px; }
 
@@ -179,7 +448,8 @@ html {
   box-sizing: border-box; }
 
 body {
-  background-color: #f9f9f9; }
+  background-color: #f9f9f9;
+  overflow-x: hidden; }
 
 .center {
   margin: 0 auto;
