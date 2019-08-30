@@ -1,0 +1,52 @@
+.blog .addContent {
+  width: 86%;
+  padding: 2vw 2%;
+  background-color: lightblue;
+  color: darkblue; }
+  .blog .addContent textarea {
+    width: 100%;
+    min-height: 100px; }
+  .blog .addContent .addBtn {
+    border: 2px solid black;
+    padding: 5px;
+    background-color: #72bcd4;
+    cursor: pointer;
+    display: inline-block; }
+.blog .posts {
+  min-height: 500px; }
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none inside;
+  margin: 10px auto;
+  padding: 0;
+  width: 90%; }
+  ul li {
+    border: 2px solid black;
+    padding: 5px;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease;
+    box-shadow: 5px 5px 10px black;
+    width: 200px;
+    text-align: center; }
+  ul .activeBtn {
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px black; }
+
+.result {
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 10px;
+  height: 500px;
+  border: 2px solid black;
+  box-sizing: border-box;
+  padding: 30px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: black; }
+
+/*# sourceMappingURL=style.css.map */

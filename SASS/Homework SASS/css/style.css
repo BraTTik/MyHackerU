@@ -125,14 +125,14 @@ header .slider {
     height: 100%;
     background-color: #00000088; }
   header .slider .first {
-    background: url("/img/bg-header1.jpg");
+    background: url("../img/bg-header1.jpg");
     background-size: cover; }
   header .slider .second {
-    background: url("/img/bg-header2.jpg");
+    background: url("../img/bg-header2.jpg");
     background-size: cover;
     background-position-y: -150px; }
   header .slider .third {
-    background: url("/img/bg-header3.jpg");
+    background: url("../img/bg-header3.jpg");
     background-size: cover;
     background-position-y: -150px; }
   header .slider h2 {
@@ -159,7 +159,7 @@ header .button {
     flex-wrap: wrap; }
     .services .specials .special_item {
       width: 30%;
-      background: url(/img/bg-special.png);
+      background: url(../img/bg-special.png);
       background-size: cover;
       margin-bottom: 5%;
       font-size: 22rem;
@@ -380,7 +380,7 @@ header .button {
 
 footer {
   font-size: 16rem;
-  background: url("/img/bg-header1.jpg");
+  background: url("../img/bg-header1.jpg");
   background-size: cover;
   color: #ffffff;
   font-family: Andika; }
