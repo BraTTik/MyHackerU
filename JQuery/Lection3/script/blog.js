@@ -11,10 +11,36 @@ $(document).ready(function() {
         curPost.find('.close').on('click', function() {
             $(this).parent('.post').remove();
         });
+        curPost.find('.editBtn').on('click', function() {
+            editHandler($(this).parent('.post'));
+        });
+
 
     });
 
+    function editHandler(obj) {
+        $('#modalContainer').css('display', 'flex');
+        let previousValues = {};
+        previousValues['title'] = obj.find('h2').text();
+        previousValues['content'] = obj.find('p').text();
+        let modalHTML = [`<p>Заголовок</p>`,
+            `<input type="text" value = "${previousValues['title']}" >`,
+            `<p>Контент</p>`,
+            `<textarea>${previousValues['content']}</textarea>`,
+            `<div class="saveBtn">Сохранить</div>`
+        ].join('');
+        $('#modal').html(modalHTML);
+        $('#modal .saveBtn').on('click', function() {
+            saveHandler(obj);
+        });
+    }
 
+    function saveHandler(obj) {
+        obj.find('h2').text($('#modal input').val());
+        obj.find('p').text($('#modal textarea').val());
+        $('#modal').html('');
+        $('#modalContainer').hide();
+    }
 
     function getContent() {
         var title = p.find('.title').val();

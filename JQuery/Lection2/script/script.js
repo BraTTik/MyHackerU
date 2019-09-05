@@ -28,7 +28,11 @@ $(document).ready(function() {
             $('.result').css('background-image', `url(${imgArray[$('li').index(curElem)]})`);
         });
         $('.result').animate({ 'opacity': '1', 'width': '90%', 'height': '500px' }, 500);
-    })
+    });
+
+    let ul = $('ul.test');
+    console.log(ul.find('.test').nextAll());
+
 })
 
 function setRandom(list) {

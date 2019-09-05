@@ -1,0 +1,96 @@
+#todoList
+    min-width: 300px
+    max-width: 30%
+    .form
+        width: 100%
+        border: 2px solid black
+        border-radius: 5px
+        padding: 5px
+        margin-bottom: 10px
+        .form-title, .form-description
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin: 0 15px
+        .form-title
+            p
+                text-transform: uppercase
+                font-family: Arial, Helvetica, sans-serif
+                font-size: 13px
+                margin-right: 5px
+                text-align: right
+                min-width: 75px
+            input
+                min-width: 70%
+                border-radius: 5px
+                border: 2px solid black
+                padding: 5px
+                outline: none
+        .form-description
+            p
+                align-self: start
+                text-transform: uppercase
+                font-family: Arial, Helvetica, sans-serif
+                font-size: 13px
+                margin-right: 5px
+                text-align: right
+                min-width: 75px
+            textarea
+                min-height: 100px
+                resize: none
+                min-width: 70%
+                border: 2px solid black
+                border-radius: 10px
+                padding: 5px
+                outline: none
+        .btnContainer
+            text-align: right
+        .addBtn
+            display: inline-block
+            padding: 5px 13px
+            border: 2px solid black
+            margin-top: 5px
+            margin-right: 15px
+            cursor: pointer
+            user-select: none
+            border-radius: 5px
+            text-transform: uppercase
+            font-size: 13px
+            font-family: Arial, Helvetica, sans-serif
+    .task
+        width: 100%
+        min-height: 30px
+        position: relative
+        display: flex
+        justify-content: flex-start
+        align-items: center
+        border: 1px solid black
+        padding: 5px
+        margin-bottom: 10px
+        .task-title
+            margin-right: 20px
+            padding-right: 20px
+            padding-left: 20px
+            border-right: 1px solid black
+        .task-description
+            margin-right: 25px
+        .close
+            position: absolute
+            right: 1%
+            top: 1%
+            color: red
+            cursor: pointer
+            user-select: none
+        .done
+            position: absolute
+            right: 1%
+            bottom: 1%
+            color: green
+            cursor: pointer
+            user-select: none
+        ul
+            padding: 0
+            list-style-type: none 
+            li
+                cursor: pointer
+                margin-bottom: 5px

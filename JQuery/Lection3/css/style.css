@@ -14,6 +14,42 @@
     display: inline-block; }
 .blog .posts {
   min-height: 500px; }
+  .blog .posts > div {
+    padding: 30px;
+    position: relative;
+    border: 1px solid black;
+    width: 500px;
+    margin-top: 20px; }
+    .blog .posts > div .close {
+      position: absolute;
+      color: red;
+      right: 1%;
+      top: 1%;
+      cursor: pointer;
+      user-select: none; }
+    .blog .posts > div h2 {
+      min-width: 30%;
+      border-bottom: 1px solid black; }
+    .blog .posts > div .editBtn {
+      display: inline-block;
+      cursor: pointer;
+      padding: 5px;
+      border: 2px solid black; }
+
+#modalContainer {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center; }
+  #modalContainer #modal {
+    width: 90%;
+    height: 90vh;
+    background-color: white; }
 
 ul {
   display: flex;

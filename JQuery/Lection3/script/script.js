@@ -27,6 +27,9 @@ $(document).ready(function() {
         });
         $('.result').animate({ 'opacity': '1', 'width': '90%', 'height': '500px' }, 500);
     })
+
+
+
 })
 
 function setRandom(list) {
