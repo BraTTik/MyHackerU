@@ -1,0 +1,66 @@
+#usersInfo
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    padding: 40px
+    .userCard
+        box-shadow: 3px 3px 8px #000000
+        width: 40%
+        min-width: 300px
+        display: flex
+        padding: 10px
+        align-items: stretch
+        margin-bottom: 40px
+        overflow: hidden
+        position: relative
+        .photoBlock
+            width: 30%
+            min-width: 150px
+            box-sizing: border-box
+            padding: 10px
+            display: flex
+            justify-content: center
+            align-items: flex-start
+            .photo
+                min-width: 128px
+                min-height: 128px
+                background-position: center
+                background-size: cover
+                border-radius: 10px
+        .userInfo
+            width: 70%
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: stretch
+            .firstNameBlock, .lastNameBlock
+                display: flex
+                justify-content: flex-start
+                align-items: stretch
+                margin-bottom: 15px
+            .nameLabel
+                margin-right: 10px
+            .emailBlock
+                position: relative
+            .showEmailBtn
+                position: absolute
+                left: 50%
+                transform: translateX(-50%)
+                white-space: nowrap
+                cursor: pointer
+                user-select: none
+                text-align: center
+                text-transform: uppercase
+                font-size: 13px
+            .userEmail
+                position: absolute
+                left: 200%
+        .delBtn
+            position: absolute
+            top: 2%
+            right: 2%
+            color: red
+            cursor: pointer
+            font-family: sans-serif
+        .userId
+            display: none

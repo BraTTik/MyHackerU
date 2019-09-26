@@ -1,0 +1,157 @@
+#usersInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px; }
+  #usersInfo .userCard {
+    box-shadow: 3px 3px 8px #000000;
+    width: 40%;
+    min-width: 300px;
+    display: flex;
+    padding: 10px;
+    align-items: stretch;
+    margin-bottom: 40px;
+    overflow: hidden;
+    position: relative; }
+    #usersInfo .userCard .photoBlock {
+      width: 30%;
+      min-width: 150px;
+      box-sizing: border-box;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; }
+      #usersInfo .userCard .photoBlock .photo {
+        min-width: 128px;
+        min-height: 128px;
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px; }
+    #usersInfo .userCard .userInfo {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch; }
+      #usersInfo .userCard .userInfo .firstNameBlock, #usersInfo .userCard .userInfo .lastNameBlock {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        margin-bottom: 15px; }
+      #usersInfo .userCard .userInfo .nameLabel {
+        margin-right: 10px; }
+      #usersInfo .userCard .userInfo .emailBlock {
+        position: relative; }
+      #usersInfo .userCard .userInfo .showEmailBtn {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        cursor: pointer;
+        user-select: none;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 13px; }
+      #usersInfo .userCard .userInfo .userEmail {
+        position: absolute;
+        left: 200%; }
+    #usersInfo .userCard .delBtn {
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      color: red;
+      cursor: pointer;
+      font-family: sans-serif; }
+    #usersInfo .userCard .userId {
+      display: none; }
+
+#newUserBtn {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  background-color: #7cb19c;
+  color: #1d2723;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 40px;
+  font-weight: 900;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer; }
+
+#modalContainer {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center; }
+  #modalContainer .modalWindow {
+    max-width: 50%;
+    min-width: 330px;
+    min-height: 50px;
+    background-color: #ffffff;
+    position: relative;
+    padding: 20px;
+    text-align: right;
+    display: flex;
+    justify-content: space-between; }
+    #modalContainer .modalWindow .userPhoto {
+      width: 128px;
+      margin-right: 15px; }
+      #modalContainer .modalWindow .userPhoto .photo {
+        width: 128px;
+        height: 128px;
+        background-color: grey;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer; }
+        #modalContainer .modalWindow .userPhoto .photo p {
+          text-align: center;
+          margin: 10px 0;
+          width: 100%; }
+        #modalContainer .modalWindow .userPhoto .photo:hover {
+          color: #ffffff; }
+    #modalContainer .modalWindow > div > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; }
+      #modalContainer .modalWindow > div > div p {
+        width: 30%;
+        text-align: right;
+        margin-right: 10px; }
+    #modalContainer .modalWindow .addUserBtn {
+      width: 50px;
+      display: inline-block;
+      padding: 5px;
+      text-align: center;
+      background-color: #919191;
+      border-radius: 5px;
+      box-shadow: 2px 2px 4px #3f3b3b;
+      cursor: pointer; }
+      #modalContainer .modalWindow .addUserBtn:hover {
+        color: #ffffff; }
+    #modalContainer .modalWindow .close {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      top: 2%;
+      right: 2%;
+      color: red;
+      font-family: sans-serif;
+      cursor: pointer;
+      display: block;
+      border-radius: 50%;
+      text-align: center; }
+      #modalContainer .modalWindow .close:hover {
+        background-color: red;
+        color: white; }
+
+/*# sourceMappingURL=style.css.map */

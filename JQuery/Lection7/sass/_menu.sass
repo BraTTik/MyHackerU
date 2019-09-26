@@ -1,0 +1,27 @@
+#menu
+    @extend %btn
+    position: fixed
+    bottom: 25px
+    right: 25px
+    .button
+        @extend %btn
+        position: absolute
+        left: 0
+        top: 0
+        z-index: 0
+        opacity: 0
+    .menuOpener
+        z-index: 1
+        opacity: 1
+
+
+%btn
+    background-color: pink
+    border-radius: 50%
+    width: 60px
+    height: 60px
+    color: white
+    text-align: center
+    display: inline-block
+    cursor: pointer
+    line-height: 60px

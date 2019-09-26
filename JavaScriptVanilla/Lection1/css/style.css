@@ -1,0 +1,6 @@
+ol {
+    padding: 5px;
+    border: 1px solid blue;
+    list-style-position: inside;
+    width: 300px;
+}

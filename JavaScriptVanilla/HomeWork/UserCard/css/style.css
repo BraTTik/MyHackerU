@@ -1,0 +1,35 @@
+.addFormBlock{
+    margin: 30px;
+}
+#cardsContainer{
+    margin-top: 30px;
+    padding: 20px;
+}
+.userCard{
+    max-width: 50%;
+    min-width: 450px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    box-shadow:inset 2px 2px 5px grey;
+    padding: 15px;
+    
+}
+
+.userInfo > div{
+    min-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+    border-right: 1px solid black;
+}
+.userInfo > div p{
+    width: 50%
+}
+.error{
+    color: red;
+    font-size: 14px;
+}
+.userTasks li{
+    text-transform: capitalize;
+}

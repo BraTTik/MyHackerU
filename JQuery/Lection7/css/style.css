@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+#listBlock {
+  width: 70vmin;
+  padding: 20px;
+  background-color: rgba(138, 231, 76, 0.336);
+  border-radius: 10px;
+  margin: 10px auto; }
+  #listBlock ul {
+    list-style-type: none; }
+  #listBlock li {
+    color: #355a1c;
+    text-align: justify;
+    margin-bottom: 20px; }
+    #listBlock li h3 {
+      text-align: center;
+      margin: 15px 0;
+      cursor: pointer; }
+    #listBlock li p {
+      overflow: hidden; }
+
+#menu {
+  position: fixed;
+  bottom: 25px;
+  right: 25px; }
+  #menu .button {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    opacity: 0; }
+  #menu .menuOpener {
+    z-index: 1;
+    opacity: 1; }
+
+#menu, #menu .button {
+  background-color: pink;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  color: white;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  line-height: 60px; }
+
+.page {
+  width: 100%;
+  height: 100vh;
+  font-size: 50px;
+  background-color: yellow;
+  border-bottom: 1px solid black; }
+
+/*# sourceMappingURL=style.css.map */

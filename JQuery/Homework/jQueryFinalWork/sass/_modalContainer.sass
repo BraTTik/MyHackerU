@@ -1,0 +1,90 @@
+#newUserBtn
+    position: fixed
+    bottom: 5%
+    right: 5%
+    background-color: #7cb19c
+    color: #1d2723
+    width: 50px
+    height: 50px
+    line-height: 50px
+    font-size: 40px
+    font-weight: 900
+    text-align: center
+    border-radius: 50%
+    cursor: pointer
+
+
+#modalContainer
+    width: 100%
+    height: 100vh
+    position: fixed
+    background-color: rgba(0,0 ,0 ,0.5)
+    top: 0
+    left: 0
+    display: none
+    justify-content: center
+    align-items: center
+    .modalWindow
+        max-width: 50%
+        min-width: 330px
+        min-height: 50px
+        background-color: #ffffff
+        position: relative
+        padding: 20px
+        text-align: right
+        display: flex
+        justify-content: space-between
+        .userPhoto
+            width: 128px
+            margin-right: 15px
+            .photo
+                width: 128px
+                height: 128px
+                background-color: grey
+                border-radius: 15px
+                display: flex
+                flex-direction: column
+                justify-content: center
+                cursor: pointer
+                p
+                    text-align: center
+                    margin: 10px 0
+                    width: 100%
+                &:hover
+                    color: #ffffff
+        &>div>div
+            display: flex
+            align-items: center
+            justify-content: space-between
+            p
+                width: 30%
+                text-align: right
+                margin-right: 10px
+        .addUserBtn
+            width: 50px
+            display: inline-block
+            padding: 5px
+            text-align: center
+            background-color: #919191
+            border-radius: 5px
+            box-shadow: 2px 2px 4px rgb(63, 59, 59)
+            cursor: pointer
+            &:hover
+                color: #ffffff
+        .close
+            position: absolute
+            width: 20px
+            height: 20px
+            line-height: 20px
+            top: 2%
+            right: 2%
+            color: red
+            font-family: sans-serif
+            cursor: pointer
+            display: block
+            border-radius: 50%
+            text-align: center
+            &:hover
+                background-color: red
+                color: white
+    
