@@ -1,0 +1,12 @@
+.delData{
+    cursor: pointer;
+    float: right;
+    color: red;
+}
+ul{
+    max-width: 300px;
+}
+
+li{
+    margin-bottom: 5px; 
+}

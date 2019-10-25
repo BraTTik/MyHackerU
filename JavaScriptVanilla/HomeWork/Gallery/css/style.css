@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #123236
+}
+
+#root{
+    display: flex;
+}
+
+.imgList{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 15px;
+}
+
+.imgList > div{
+    width: 160px;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.imgBrowser{
+    width: 90vmin;
+    height: 70vmin;
+}
+
+.imgBrowser > div{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}

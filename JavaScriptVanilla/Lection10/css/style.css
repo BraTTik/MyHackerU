@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: pink;
+    position: relative;
+    color: green;
+}
+.blot{
+    position: absolute;
+    transition: top 0.2s, left 0.2s;
+}
+.blot:after{
+    content: '';
+    background-image:url('../img/img.png');
+    width: 50vmin;
+    height: 50vmin;
+    position: absolute;
+    background-size: cover;
+}
+
+.good{
+    width: 100%;
+    height: 100vh;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.good img{
+    width: 100%;
+}
+
+.good img:hover{
+    cursor: none;
+}
+
+.loupe{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: none;
+    background-image: url('../img/bike.jpg');
+    background-size: 800%;
+}
+
+.loupe.active{
+    display: block;
+    cursor: none;
+}
+
+.like{
+    height: 100vh;
+    background-color: purple;
+}
+
+.imgContainer{
+    width: 50%;
+    /* background-image: url('../img/bike.jpg');
+    background-size: cover;
+    background-position: center; */
+    min-height: 200px;
+}
+#liked{
+    display: none;
+}
+#liked:checked+label .circle{
+    left: 100px;
+    background-color: blue;
+}
+
+.trigger{
+    display:inline-block;
+    height: 50px;
+    width: 150px;
+    background-color: grey;
+    border-radius: 25px;
+    border: 5px solid grey;
+    position: relative;
+    cursor: pointer;
+}
+.circle{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: green;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: left .3s, background-color .3s;
+}
+
+.slider{
+    width: 100%;
+    height: 100vh;
+    background-color: lightsalmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sliderContainer{
+    width: 50vmin;
+    height: 50vmin;
+    background-color: green;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide{
+    position: absolute;
+    left: 0;
+    top: 0;
+}

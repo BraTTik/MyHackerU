@@ -1,0 +1,25 @@
+
+@keyframes error{
+    0% {
+        transform: skewX(0);
+    }
+    25% {
+        transform: skew(5deg);
+    }
+    50%{
+        transform: skewX(0);
+    }
+    75%{
+        transform: skewX(-5deg);
+    }
+    100%{
+        transform: skewX(0);
+    }
+}
+
+.error{
+    animation-name: error;
+    animation-duration: .3s;
+    animation-iteration-count: 3;
+    outline: 2px solid red;
+}
