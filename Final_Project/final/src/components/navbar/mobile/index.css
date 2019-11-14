@@ -1,0 +1,26 @@
+.show .nav-item:any-link, .show .nav-item:hover{
+    text-decoration: none;
+    font-family: 'Montserrat';
+    transition: all .3s ease;
+    border: none;
+    color: white;
+}
+.show.topbar>div{
+    padding: .5rem;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+
+#user-mobile{
+    position: absolute;
+    right: 5.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#user-mobile.menu-opened{
+    top: 1.85rem;
+}
+#user-mobile>div{
+    cursor: pointer;
+}

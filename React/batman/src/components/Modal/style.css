@@ -1,0 +1,15 @@
+.show{
+    background-color: rgba(0,0,0,0.5);
+    display: block;
+    opacity: 1;
+    top: 0;
+}
+.hide{
+    display: none;
+    opacity: 0;
+    top: -100%;
+}
+
+.fade{
+    transition: all .5s
+}
