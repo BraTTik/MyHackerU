@@ -1,10 +1,13 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import { HOME } from '../../../router/url';
+import LogoImage from '../../../assets/images/icons/logo.png'
 
 const Logo = (props) =>{
     return(
-        <a href="index.html" className="logo">
-            <img src="images/icons/logo.png" alt="IMG-LOGO"/>
-        </a>
+        <Link to={ HOME } className="logo">
+            <img src={ LogoImage } alt="IMG-LOGO"/>
+        </Link>
     );
 }
 

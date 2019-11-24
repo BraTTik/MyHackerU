@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 const BackToTopBtn = (props) =>{
@@ -17,9 +17,16 @@ const BackToTopBtn = (props) =>{
         }, 5)
     }
 
-    window.addEventListener('scroll', ()=>{
-        window.pageYOffset > 200 ? setIsShown(true) : setIsShown(false);
-    })
+    useEffect(() => {
+        function windowListener(){
+            window.pageYOffset > 200 ? setIsShown(true) : setIsShown(false);
+        }
+        window.addEventListener('scroll', windowListener);
+        return () => {
+            window.removeEventListener('scroll', windowListener);
+        };
+    }, []);
+
 
     
     return(

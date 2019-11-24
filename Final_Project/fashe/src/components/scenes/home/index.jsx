@@ -1,8 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Slider from './components/slider';
+import Categories from './components/categories';
 
-function Home(props){
+const Home = (props) => {
+
     return (
-        <h1>HOME</h1>
+        <React.Fragment>
+            <Slider />
+            <Categories />
+        </React.Fragment>
     )
 
 }

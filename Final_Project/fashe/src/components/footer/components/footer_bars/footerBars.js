@@ -1,22 +1,24 @@
+import * as URL from '../../../../router/url';
+
 export default [
     {
         title:'Categories',
         links:[
             {
-                title: 'Men',
-                href: '#'
+                title: 'Chairs',
+                href:  URL.CHAIRS
             },
             {
-                title: 'Women',
-                href: '#'
+                title: 'Arm chairs',
+                href: URL.ARM_CHAIRS
             },
             {
-                title: 'Dresses',
-                href: '#'
+                title: 'Sofas',
+                href: URL.SOFAS
             },
             {
-                title: 'Sunglasses',
-                href: '#'
+                title: 'Tables',
+                href: URL.TABLES
             },
         ]
     },
@@ -29,7 +31,7 @@ export default [
             },
             {
                 title:'About Us',
-                href:'#',
+                href: URL.ABOUT,
             },
             {
                 title:'Contact Us',

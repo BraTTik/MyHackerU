@@ -1,19 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SubmitButton from '../../../../submit_button';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateCart, updateCartCounter, updateCartTotalItems } from '../../../../../store/actions';
+import { PRODUCT_VIEW } from '../../../../../router/url'
 
 const ProductCard = (props) => {
     const {
         name,
         price,
         id,
-        img,
     } = props;
+    
+    const [img, setImg] = useState();
 
     const dispatcher = useDispatch();
     const cart = useSelector(store=>store.app.cart);
+
+    useEffect(() => {
+        let isSubscribed = true;
+        async function fetchImage(){
+            const image = await fetch(`http://test-api.ipromote.ru/API/IMAGE/FIND?cid=${id}`)
+                    .then(response => response.json())
+                    .then(json=>json.data[0].url)
+            if(isSubscribed){
+                setImg(`http://test-api.ipromote.ru/img/${image}`);
+            }
+        }
+        fetchImage();
+        
+        return () => {
+            isSubscribed = false;
+        };
+    }, [])
 
     const handleAddToCart = () =>{
         const filtered = cart.items.filter(item => item.id == id);
@@ -26,7 +45,7 @@ const ProductCard = (props) => {
         }else{
             dispatcher({
                 type: updateCart.getType(),
-                payload: {...cart, items:[...cart.items, {...props, cnt: 1}]},
+                payload: {...cart, items:[...cart.items, {...props, img: img, cnt: 1}]},
             })
         }
 
@@ -53,7 +72,7 @@ const ProductCard = (props) => {
                 </div>
 
                 <div className="block2-txt p-t-20">
-                    <Link to="product-detail.html" className="block2-name dis-block s-text3 p-b-5">
+                    <Link to={ `${PRODUCT_VIEW}/${id}` } className="block2-name dis-block s-text3 p-b-5">
                         { name }
                     </Link>
 

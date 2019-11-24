@@ -1,14 +1,30 @@
-import React from 'react'
-import Row from './row'
+import React from 'react';
+import Row from './row';
+import { useSelector } from 'react-redux';
 
 
 const CartTable = (props) => {
+    const totalItems = useSelector(store=>store.app.cart.totalItems);
     const {
         data
     } = props;
     const renderRow = (item) => {
         return(
             <Row key={item.id} { ...item }/>
+        )
+    }
+    const renderEmptyCart = () => {
+        return (
+            <tr className="table-row">
+                <td className="column-1">
+                    Ваша корзина пуста
+                </td>
+                <td className="column-2"></td>
+                <td className="column-3"></td>
+                <td className="column-4">
+                </td>
+                <td className="column-5"></td>
+            </tr>
         )
     }
     return(
@@ -23,7 +39,7 @@ const CartTable = (props) => {
                         <th className="column-5">Total</th>
                     </tr>
 
-                    { data.items.map(renderRow) }
+                    { totalItems > 0 ? data.items.map(renderRow) : renderEmptyCart() }
 
                 </tbody>
             </table>

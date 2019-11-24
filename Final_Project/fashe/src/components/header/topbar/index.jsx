@@ -24,14 +24,7 @@ const Topbar = (props) => {
                 <span className="topbar-email">
                     fashe@example.com
                 </span>
-
                 <Select />
-                {/* <div className="topbar-language rs1-select2">
-                    <select className="selection-1" name="time">
-                        <option>USD</option>
-                        <option>EUR</option>
-                    </select>
-                </div> */}
             </div>
         </div>
 

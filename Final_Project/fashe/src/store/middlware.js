@@ -1,16 +1,17 @@
 import * as actions from './actions';
 
 export const gotDataMiddleware = store => next => action => {
-    if(action.type === actions.updateCartCounter.getType()
-        || 
-        action.type === actions.deleteCartItem.getType()
-        ||
-        action.type === actions.updateCart.getType())
+    if(action.type === '@@router/LOCATION_CHANGE')
         {
-        console.log(action);
-        let newAction = {type: actions.updateCartTotalItems.getType()}
-        store.dispatch({type: action.type, payload: action.payload});
-        return next(newAction);
+            let scroll = window.pageYOffset;
+            let scrollSpeed = 50;
+            setTimeout(function scrollTop(){
+                window.scrollBy(0, -scrollSpeed);
+                scroll -= scrollSpeed;
+                if(scroll >= 0){
+                    setTimeout(scrollTop, 5);
+                }
+            }, 5)
     }
     return next(action);
 }

@@ -8,9 +8,9 @@ import { deleteCartItem, updateCartTotalItems } from '../../../../../store/actio
 const Row = (props) => {
     
     Row.propTypes = {
-        id: PropTypes.number,
+        id: PropTypes.string,
         name: PropTypes.string,
-        price: PropTypes.number,
+        price: PropTypes.string,
         img: PropTypes.string,
         cnt: PropTypes.number,
     }
@@ -42,7 +42,7 @@ const Row = (props) => {
                 </div>
             </td>
             <td className="column-2">{ name }</td>
-            <td className="column-3">${ price }</td>
+            <td className="column-3">${ +price }</td>
             <td className="column-4">
                 <QntyCounter id={ id } cnt={ cnt }/>
             </td>

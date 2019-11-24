@@ -1,96 +1,96 @@
-<div className="wrap_header_mobile">
-<a href="index.html" className="logo-mobile">
-    <img src="images/icons/logo.png" alt="IMG-LOGO"/>
-</a>
-
-<div className="btn-show-menu">
-    <div className="header-icons-mobile">
-        <a href="#" className="header-wrapicon1 dis-block">
-            <img src="images/icons/icon-header-01.png" className="header-icon1" alt="ICON"/>
-        </a>
-
-        <span className="linedivide2"></span>
-
-        <div className="header-wrapicon2">
-            <img src="images/icons/icon-header-02.png" className="header-icon1 js-show-header-dropdown" alt="ICON"/>
-            <span className="header-icons-noti">0</span>
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import navs from './nav/url';
+import socials from '../social_icons/socialIcons';
+import CartIcon  from '../../assets/images/icons/icon-header-02.png';
+import UserIcon from '../../assets/images/icons/icon-header-01.png';
+import LogoImage from '../../assets/images/icons/logo.png'
 
 
-    <div className="btn-show-menu-mobile hamburger hamburger--squeeze">
-        <span className="hamburger-box">
-            <span className="hamburger-inner"></span>
-        </span>
-    </div>
-</div>
-</div>
+const Mobile = (props) => {
+    const totalItems = useSelector(store=>store.app.cart.totalItems);
+    const [isActive, setIsActive] = useState(false);
 
-<div className="wrap-side-menu" >
-<nav className="side-menu">
-    <ul className="main-menu">
-        <li className="item-topbar-mobile p-l-20 p-t-8 p-b-8">
-            <span className="topbar-child1">
-                Free shipping for standard order over $100
-            </span>
-        </li>
+    const updateActive = () => {
+        setIsActive(!isActive);
+    }
+    
+    const renderNavItems = (item, index) => {
+        return (
+            <li key={index} className="item-menu-mobile">
+                <Link to={item.href}>{item.title}</Link>
+            </li>
+        )
+    }
+    const renderSocials = (item, index) =>{
+        return <Link key={index} to={item.href} className={`topbar-social-item ${item.icon}`}></Link>
+    }
 
-        <li className="item-topbar-mobile p-l-20 p-t-8 p-b-8">
-            <div className="topbar-child2-mobile">
-                <span className="topbar-email">
-                    fashe@example.com
-                </span>
+    const menuClosedStyle = {maxHeight: 0}
+    const menuOpenedStyle = {maxHeight: '450px'}
+    return(
+        <React.Fragment>
+            <div className="wrap_header_mobile">
+                <a href="index.html" className="logo-mobile">
+                    <img src={ LogoImage } alt="IMG-LOGO"/>
+                </a>
 
-                <div className="topbar-language rs1-select2">
-                    <select className="selection-1" name="time">
-                        <option>USD</option>
-                        <option>EUR</option>
-                    </select>
+                <div className="btn-show-menu">
+                    <div className="header-icons-mobile">
+                            <a href="#" className="header-wrapicon1 dis-block">
+                                <img src={ UserIcon } className="header-icon1" alt="ICON"/>
+                            </a>
+
+                            <span className="linedivide2"></span>
+
+                            <div className="header-wrapicon2">
+                                <img src={ CartIcon } className="header-icon1 js-show-header-dropdown" alt="ICON"/>
+                                <span className="header-icons-noti">{ totalItems }</span>
+                            </div>
+                            <div className={`btn-show-menu-mobile hamburger hamburger--squeeze ${isActive && 'is-active'}`} onClick={ updateActive }>
+                                <span className="hamburger-box">
+                                    <span className="hamburger-inner"></span>
+                                </span>
+                            </div>
+                    </div>
                 </div>
             </div>
-        </li>
+            <div className="wrap-side-menu" style={ {transition: 'max-height .5s ease', overflow:'hidden', display: 'block', ...(isActive ? menuOpenedStyle : menuClosedStyle)} }>
+                <nav className="side-menu">
+                    <ul className="main-menu">
+                        <li className="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+                            <span className="topbar-child1">
+                                Free shipping for standard order over $100
+                            </span>
+                        </li>
 
-        <li className="item-topbar-mobile p-l-10">
-            <div className="topbar-social-mobile">
-                <a href="#" className="topbar-social-item fa fa-facebook"></a>
-                <a href="#" className="topbar-social-item fa fa-instagram"></a>
-                <a href="#" className="topbar-social-item fa fa-pinterest-p"></a>
-                <a href="#" className="topbar-social-item fa fa-snapchat-ghost"></a>
-                <a href="#" className="topbar-social-item fa fa-youtube-play"></a>
+                        <li className="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+                            <div className="topbar-child2-mobile">
+                                <span className="topbar-email">
+                                    fashe@example.com
+                                </span>
+
+                                <div className="topbar-language rs1-select2">
+                                    <select className="selection-1" name="time">
+                                        <option>USD</option>
+                                        <option>EUR</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li className="item-topbar-mobile p-l-10">
+                            <div className="topbar-social-mobile">
+                                { socials.map(renderSocials)}
+                            </div>
+                        </li>
+                        { navs.map(renderNavItems) }
+                    </ul>
+                </nav>
             </div>
-        </li>
+        </React.Fragment>
+    )
+}
 
-        <li className="item-menu-mobile">
-            <a href="index.html">Home</a>
-            <ul className="sub-menu">
-                <li><a href="index.html">Homepage V1</a></li>
-                <li><a href="home-02.html">Homepage V2</a></li>
-                <li><a href="home-03.html">Homepage V3</a></li>
-            </ul>
-            <i className="arrow-main-menu fa fa-angle-right" aria-hidden="true"></i>
-        </li>
-
-        <li className="item-menu-mobile">
-            <a href="product.html">Shop</a>
-        </li>
-
-        <li className="item-menu-mobile">
-            <a href="product.html">Sale</a>
-        </li>
-
-        <li className="item-menu-mobile">
-            <a href="cart.html">Features</a>
-        </li>
-
-        <li className="item-menu-mobile">
-            <a href="blog.html">Blog</a>
-        </li>
-
-        <li className="item-menu-mobile">
-            <a href="about.html">About</a>
-        </li>
-
-        <li className="item-menu-mobile">
-            <a href="contact.html">Contact</a>
-        </li>
-    </ul>
-</nav>
-</div>
+export default Mobile;

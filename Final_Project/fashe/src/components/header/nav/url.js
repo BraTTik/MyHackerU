@@ -8,6 +8,28 @@ export default [
     {
         title:'Shop',
         href: URL.SHOP,
+        children:[
+            {
+                title: 'Tables',
+                href:URL.TABLES,
+            },
+            {
+                title: 'Chairs',
+                href:URL.CHAIRS,
+            },
+            {
+                title: 'Arm chairs',
+                href:URL.ARM_CHAIRS,
+            },
+            {
+                title: 'Sofas',
+                href:URL.SOFAS,
+            },
+            {
+                title: 'Lamps',
+                href:URL.LAMPS,
+            },
+        ],
     },
     {
         title:'Sale',
