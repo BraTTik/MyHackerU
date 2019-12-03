@@ -81,25 +81,25 @@ const Footer = (props) => {
 			</div>
 		</div>
 
-		<div className="t-center p-l-15 p-r-15">
+		<div className="t-center p-l-15 p-r-15" >
 			<a href="#">
-				<img className="h-size2" src="images/icons/paypal.png" alt="IMG-PAYPAL"/>
+				<i className="fab fa-cc-paypal h2 mr-1"></i>
 			</a>
 
 			<a href="#">
-				<img className="h-size2" src="images/icons/visa.png" alt="IMG-VISA"/>
+				<i className="fab fa-cc-visa h2 mr-1"></i>
 			</a>
 
 			<a href="#">
-				<img className="h-size2" src="images/icons/mastercard.png" alt="IMG-MASTERCARD"/>
+				<i className="fab fa-cc-mastercard h2 mr-1"></i>
 			</a>
 
 			<a href="#">
-				<img className="h-size2" src="images/icons/express.png" alt="IMG-EXPRESS"/>
+				<i className="fab fa-cc-amex h2 mr-1"></i>
 			</a>
 
 			<a href="#">
-				<img className="h-size2" src="images/icons/discover.png" alt="IMG-DISCOVER"/>
+				<i className="fab fa-cc-discover h2 mr-1"></i>
 			</a>
 
 			<div className="t-center s-text8 p-t-20">

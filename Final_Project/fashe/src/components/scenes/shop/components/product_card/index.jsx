@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SubmitButton from '../../../../submit_button';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateCart, updateCartCounter, updateCartTotalItems } from '../../../../../store/actions';
+import { updateCart, updateCartCounter, updateCartTotalItems, updateShopModal } from '../../../../../store/actions';
 import { PRODUCT_VIEW } from '../../../../../router/url'
 
 const ProductCard = (props) => {
@@ -51,6 +51,10 @@ const ProductCard = (props) => {
 
         dispatcher({
             type: updateCartTotalItems.getType(),
+        })
+        dispatcher({
+            type: updateShopModal.getType(),
+            payload: {isShown: true, goodName: name }
         })
     }
     return(

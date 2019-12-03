@@ -13,5 +13,11 @@ export const gotDataMiddleware = store => next => action => {
                 }
             }, 5)
     }
+    if(action.type === actions.updateCart.getType()){
+        localStorage.setItem('_fashe_cart', JSON.stringify(action.payload))
+    }
+    if(action.type === actions.updateCartTotalItems.getType()){
+        localStorage.setItem('_fashe_cart', JSON.stringify({items:[...store.getState().app.cart.items], totalItems: store.getState().app.cart.totalItems+1}));
+    }
     return next(action);
 }

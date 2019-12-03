@@ -13,6 +13,7 @@ const initialState = {
   productPageCounter: 1,
   categoryId: 0,
   colorId: 0,
+  shopModal:{isShown: false, goodName: null}
 };
 
 
@@ -44,6 +45,10 @@ const rootReducer = createReducer(
     [actions.updateProductPageId]: (state, payload) => ({...state, productPageId: payload}),
     [actions.updateCategoryId]: (state, payload) => ({...state, categoryId: payload}),
     [actions.updateColorId]: (state, payload) => ({...state, colorId: payload}),
+    [actions.updateSortFunc]: (state, payload) => ({...state, sortFunc: payload }),
+    [actions.updatePriceFilter]: (state, payload) => ({...state, priceFilter: payload }),
+    [actions.updateShippingTo]: (state, payload) => ({...state, shippingTo: payload }),
+    [actions.updateShopModal]: (state, payload) => ({...state, shopModal: payload }),
 
   },
   initialState

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, } from 'react-redux';
 import { updateCartCounter } from '../../../../../store/actions';
 import { deleteCartItem, updateCartTotalItems } from '../../../../../store/actions';
 
@@ -10,7 +10,6 @@ const QntyCounter = (props) => {
     } = props;
 
     const dispatcher = useDispatch();
-    const cart = useSelector(store=>store.app.cart)
 
     const handleIncrement = () => {
         dispatcher({

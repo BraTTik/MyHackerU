@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PageHeading from '../../page_heading';
 import CartTable from './components/cart_table/index';
 import { useSelector, useDispatch } from 'react-redux';
-import heading_image from '../../../assets/images/1920х239-2.jpg'
-
+import heading_image from '../../../assets/images/1920х239-2.jpg';
+import CountrySelector  from './components/country_selector';
+import shippingCosts from './components/shipping_costs';
 
 function Cart(props){
 
     const cart = useSelector(store => store.app.cart);
+    const shippingTo = useSelector(store => store.app.shippingTo);
+    const [subtotal, setSubtotal] = useState(0);
+    const [shippingCost, setShippingCost] = useState(0);
+
+    useEffect(() => {
+        let subtotal = cart.items.reduce((sum, item) => sum + item.price*item.cnt, 0);
+        let found = shippingCosts.find(item =>  item.country === shippingTo );
+        if(found){
+            setShippingCost(found.cost);
+        }
+        setSubtotal(subtotal);
+    }, [cart, shippingTo]);
+
+    const shippingMessage = shippingTo&&`Shipping in your country is $${shippingCost}`
 
     return (
         <React.Fragment>
@@ -45,6 +60,7 @@ function Cart(props){
                         </div>
                     </div>
 
+
                     <div className="bo9 w-size18 p-l-40 p-r-40 p-t-30 p-b-38 m-t-30 m-r-0 m-l-auto p-lr-15-sm">
                         <h5 className="m-text20 p-b-24">
                             Cart Totals
@@ -56,7 +72,7 @@ function Cart(props){
                             </span>
 
                             <span className="m-text21 w-size20 w-full-sm">
-                                $39.00
+                                ${subtotal}
                             </span>
                         </div>
 
@@ -67,21 +83,17 @@ function Cart(props){
 
                             <div className="w-size20 w-full-sm">
                                 <p className="s-text8 p-b-23">
-                                    There are no shipping methods available. Please double check your address, or contact us if you need any help.
+                                    {shippingMessage || 'There are no shipping methods available. Please double check your address, or contact us if you need any help.'}
                                 </p>
 
                                 <span className="s-text19">
                                     Calculate Shipping
                                 </span>
 
-                                <div className="rs2-select2 rs3-select2 rs4-select2 bo4 of-hidden w-size21 m-t-8 m-b-12">
-                                    <select className="selection-2 select2-hidden-accessible" name="country" tabIndex="-1" aria-hidden="true">
-                                        <option>Select a country...</option>
-                                        <option>US</option>
-                                        <option>UK</option>
-                                        <option>Japan</option>
-                                    </select><span className="select2 select2-container select2-container--default" dir="ltr" style={{width: '151.333px'}}><span className="selection"><span className="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabIndex="0" aria-labelledby="select2-country-ds-container"><span className="select2-selection__rendered" id="select2-country-ds-container" title="Select a country...">Select a country...</span><span className="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span className="dropdown-wrapper" aria-hidden="true"></span></span>
+                                <div className="size13 bo4 m-b-12">
+                                    <CountrySelector />
                                 </div>
+                
 
                                 <div className="size13 bo4 m-b-12">
                                 <input className="sizefull s-text7 p-l-15 p-r-15" type="text" name="state" placeholder="State /  country"/>
@@ -105,7 +117,7 @@ function Cart(props){
                             </span>
 
                             <span className="m-text21 w-size20 w-full-sm">
-                                $39.00
+                                { subtotal + shippingCost }
                             </span>
                         </div>
 

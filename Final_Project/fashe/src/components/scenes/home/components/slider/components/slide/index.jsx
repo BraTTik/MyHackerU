@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import { SHOP } from '../../../../../../../router/url';
+import SlideButton from './slide_button';
 
 
 const Slide = (props) => {
@@ -22,11 +22,7 @@ const Slide = (props) => {
                     New arrivals
                 </h2>
 
-                <div className="wrap-btn-slide1 w-size1 animated visible-false zoomIn visible-true" data-appear="zoomIn">
-                    <Link to={ SHOP } className="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4" tabIndex="0">
-                        Shop Now
-                    </Link>
-                </div>
+                <SlideButton to={ SHOP } title="SHOP NOW"/>
             </div>
         </div>
     )

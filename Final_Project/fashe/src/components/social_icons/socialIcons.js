@@ -1,22 +1,22 @@
 export default [
     {
-        icon: 'fa fa-facebook',
+        icon: 'fab fa-facebook',
         href: 'http://facebook.com',
     },
     {
-        icon: 'fa fa-instagram',
+        icon: 'fab fa-instagram',
         href: 'http://instagram.com',
     },
     {
-        icon: 'fa fa-pinterest-p',
+        icon: 'fab fa-pinterest',
         href: 'http://pinterest.com',
     },
     {
-        icon: 'fa fa-snapchat-ghost',
+        icon: 'fab fa-snapchat',
         href: 'http://snapchat.com',
     },
     {
-        icon: 'fa fa-youtube-play',
+        icon: 'fab fa-youtube',
         href: 'http://youtube.com',
     },
 ]

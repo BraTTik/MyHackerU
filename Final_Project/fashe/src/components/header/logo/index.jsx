@@ -4,8 +4,11 @@ import { HOME } from '../../../router/url';
 import LogoImage from '../../../assets/images/icons/logo.png'
 
 const Logo = (props) =>{
+    const {
+        className
+    } = props;
     return(
-        <Link to={ HOME } className="logo">
+        <Link to={ HOME } className={ className }>
             <img src={ LogoImage } alt="IMG-LOGO"/>
         </Link>
     );

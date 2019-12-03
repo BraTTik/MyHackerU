@@ -9,7 +9,6 @@ import Mobile from './mobile';
 
 const Header = (props) => {
     const cart = useSelector(store=>store.app.cart);
-    const isMobile = useSelector(store=>store.app.isMobile);
 
 
     return(
@@ -19,9 +18,11 @@ const Header = (props) => {
                 <Topbar />
 
                 <div className="wrap_header">
-                    <Logo/>
+                    <Logo className="logo"/>
                     <Nav/>
-                    <HeaderIcons totalItems={ cart.totalItems }/>
+                    <div className="header-icons">
+                        <HeaderIcons totalItems={ cart.totalItems }/>
+                    </div>
 			    </div>
             </div>
             <Mobile/>

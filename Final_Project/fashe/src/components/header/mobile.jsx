@@ -5,7 +5,9 @@ import navs from './nav/url';
 import socials from '../social_icons/socialIcons';
 import CartIcon  from '../../assets/images/icons/icon-header-02.png';
 import UserIcon from '../../assets/images/icons/icon-header-01.png';
-import LogoImage from '../../assets/images/icons/logo.png'
+import LogoImage from '../../assets/images/icons/logo.png';
+import Logo from './logo';
+import HeaderIcons from './header_icons';
 
 
 const Mobile = (props) => {
@@ -32,22 +34,11 @@ const Mobile = (props) => {
     return(
         <React.Fragment>
             <div className="wrap_header_mobile">
-                <a href="index.html" className="logo-mobile">
-                    <img src={ LogoImage } alt="IMG-LOGO"/>
-                </a>
+                <Logo className="logo-mobile" />
 
                 <div className="btn-show-menu">
                     <div className="header-icons-mobile">
-                            <a href="#" className="header-wrapicon1 dis-block">
-                                <img src={ UserIcon } className="header-icon1" alt="ICON"/>
-                            </a>
-
-                            <span className="linedivide2"></span>
-
-                            <div className="header-wrapicon2">
-                                <img src={ CartIcon } className="header-icon1 js-show-header-dropdown" alt="ICON"/>
-                                <span className="header-icons-noti">{ totalItems }</span>
-                            </div>
+                            <HeaderIcons totalItems={ totalItems }/>
                             <div className={`btn-show-menu-mobile hamburger hamburger--squeeze ${isActive && 'is-active'}`} onClick={ updateActive }>
                                 <span className="hamburger-box">
                                     <span className="hamburger-inner"></span>

@@ -1,12 +1,12 @@
 import React from 'react';
-import Slider from './components/slider';
 import Categories from './components/categories';
+import SlickSlider from './components/slick_slider';
 
 const Home = (props) => {
 
     return (
         <React.Fragment>
-            <Slider />
+            <SlickSlider />
             <Categories />
         </React.Fragment>
     )

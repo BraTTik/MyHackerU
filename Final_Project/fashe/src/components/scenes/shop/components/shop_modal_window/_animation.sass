@@ -1,0 +1,36 @@
+@keyframes pseudoRoll
+    0% 
+        transform: rotate(45deg)
+        
+    100% 
+        transform: rotate(-135deg)
+
+@keyframes shortTickAnimation
+    0%  
+        transform: translateX(-20px) translateY(-20px) rotate(45deg)
+        width: 20px
+        opacity: 0
+    1%
+        opacity: 1
+    50%
+        transform: translateX(-24px) translateY(-11px) rotate(45deg)
+        width: 45px
+
+    100%  
+        transform: translateX(0px) translateY(0px) rotate(45deg)
+        width: 20px
+        opacity: 1
+
+@keyframes longTickAnimation
+    0%
+        transform: translateX(-40px) translateY(40px) rotate(135deg)
+        opacity: 0
+    1%
+        opacity: 1
+        
+    100%
+        transform: translateX(0px) translateY(0px) rotate(135deg)
+        opacity: 1
+        
+
+        
