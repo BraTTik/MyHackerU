@@ -6,6 +6,7 @@ const SlideHeader = props => {
     <h2
       className={`caption2-slide1 xl-text1 t-center animated visible-false m-b-37 fadeInUp visible-true ${animation}`}
       data-appear={animation}
+      style={{animationDelay: '.2s'}}
     >
       {props.children}
     </h2>

@@ -2,14 +2,14 @@ import React from 'react';
 import './style.css';
 
 const Slide = props => {
-    //width: '921px', position: 'relative', left: '0px', top: '0px', zIndex: '999', opacity: '1'
     const {
         image,
         index,
+        isActive,
     } = props;
 
     return(
-        <div className={`item-slick1 slick-slide shown`} style={{backgroundImage: `url(${image})`, width: '100%'}} tabIndex="0">
+        <div className={`item-slick1 slick-slide`} style={{backgroundImage: `url(${image})`, width: '100%'}} tabIndex="0">
             <div className="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
                 {props.children}
             </div>
