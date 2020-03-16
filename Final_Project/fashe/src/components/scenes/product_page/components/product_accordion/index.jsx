@@ -81,11 +81,11 @@ function CustomToggle({children, eventKey}){
             >
             { children }
             <i
-            className={`down-mark fs-12 color1 fa fa-minus ${isOpen ? '' : 'dis-none'}`}
+            className={`down-mark fs-12 color1 fa fa-minus ${isOpen ? '' : 'd-none'}`}
             aria-hidden="true"
             ></i>
             <i
-            className={`up-mark fs-12 color1 fa fa-plus ${isOpen ? 'dis-none' : ''}`}
+            className={`up-mark fs-12 color1 fa fa-plus ${isOpen ? 'd-none' : ''}`}
             aria-hidden="true"
             ></i>
         </h5>
