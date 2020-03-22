@@ -6,5 +6,6 @@
     return [
         'controllersPath'   => CONTROLLER_PATH,
         'defaultController' => 'test',
-        'defaultAction'     => 'test'
+        'defaultAction'     => 'test',
+        'dbconf'            => include 'dbconf.php'
     ];

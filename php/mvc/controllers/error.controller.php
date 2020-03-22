@@ -4,6 +4,6 @@
     {
         public function actionNotfound()
         {
-            echo ': Not found';
+            echo 'Not found';
         }
     }

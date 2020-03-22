@@ -29,17 +29,21 @@
             return self::$instance;
         }
 
+        public function __get($key)
+        {
+            return $this->config[$key];
+        }
+
         public function run($config)
         {
             $this->config = $config;
-            $controller = $this->inputs->get['c'] ?? $config['defaultController'] ?? '';
-            $action     = $this->inputs->get['a'] ?? $config['defaultAction'] ?? '';
-
+            $controller = $this->inputs->get['c'] ?? core::app()->defaultController ?? '';
+            $action     = $this->inputs->get['a'] ?? core::app()->defaultAction ?? '';
+;
             try{
                 $this->runController($controller, $action);
             }catch(httpError $e){
-                header("HTTP/1.1 404 Not Found");
-                echo $e->getMessage();
+                header('HTTP/1.1 '.$e->getCode().' '.$e->getMessage());
                 $this->runController('error', 'notfound');
             }catch(Exception $e){
                 echo $e->getMessage();
@@ -70,7 +74,7 @@
             $this->controller = new $controllerName;
 
             if(!method_exists($this->controller, $action)){
-                throw new httpError("Action -> ($action) doesn't exists");
+                throw new httpError("Action -> ($action) doesn't exists", 404);
             }
 
             $this->action = $action;
