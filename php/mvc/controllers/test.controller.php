@@ -9,13 +9,12 @@
            
             $query = new QueryBuilder(Core::app()->dbconf);
             
-            $res = $query ->delete('pages')
-                        ->where(['id' => '7'])
-                    ->execute();
-            echo '<pre>';
-            var_dump($res);
+            $result = $query->select('article')
+                            ->from('pages')
+                            ->where('author = Ветров')
+                            ->execute();
 
-
+            var_dump($result);
 
         }
 

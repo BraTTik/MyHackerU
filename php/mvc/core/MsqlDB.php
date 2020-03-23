@@ -12,6 +12,8 @@
                $conf['password'], 
                $conf['database']
             );
+
+            $this->connection->query("SET NAMES 'utf8'");
         }
 
         public function query($sql)
