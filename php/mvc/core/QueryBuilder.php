@@ -38,6 +38,8 @@
         private $insert = [];
         private $group = [];
         private $join = [];
+        private $order = [];
+        private $limit = [];
 
         public function __construct(string $host, string $user, string $password, string $database)
         {
@@ -238,6 +240,44 @@
             return 'GROUP BY '.implode(', ', $fields);
         }
 
+        public function orderBy()
+        {
+            $this->order = func_get_args();
+            $this->sentences[] = $this->buildOrder();
+
+            return $this;
+        }
+
+        private function buildOrder()
+        {
+            $rawFields = $this->order;
+            $fields = [];
+            foreach($rawFields as $value){
+                $fields[] = $this->escape($value);
+            }
+
+            return 'ORDER BY '.implode(', ', $fields);
+        }
+
+        public function limit()
+        {
+            $this->limit = func_get_args();
+            $this->sentences = $this->buildLimit();
+
+            return $this;
+        }
+
+        private function buildLimit()
+        {
+            $rawFields = $this->limit;
+            $fields = [];
+            foreach($rawFields as $value){
+                $fields[] = $this->escape($value);
+            }
+
+            return 'LIMIT '.implode(', ', $fields);
+        }
+
         public function getText($strict = false)
         {
             $query = '';
@@ -266,6 +306,12 @@
             }
             if($this->group){
                 $query .= ' '.$this->buildGroup().' ';
+            }
+            if($this->order){
+                $query .= ' '.$this->buildOrder().' ';
+            }
+            if($this->limit){
+                $query .= ' '.$this->buildLimit().' ';
             }
 
             if($strict){

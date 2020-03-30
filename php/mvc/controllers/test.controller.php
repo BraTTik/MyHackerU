@@ -25,8 +25,9 @@
                         ->where(['id < 5', 'param1 = 4'])
                         ->from('table1')
                         ->join('table2', 'id', 'id')
-                        ->groupBy('id')
-                        ->execute();
+                        ->orderBy('id')
+                        ->limit(3, 4)
+                        ->getText();
             var_dump($res);
 
         }
