@@ -34,23 +34,6 @@
             return $this->config[$key];
         }
 
-        public function run($config)
-        {
-            $this->config = $config;
-            $controller = $this->inputs->get['c'] ?? core::app()->defaultController ?? '';
-            $action     = $this->inputs->get['a'] ?? core::app()->defaultAction ?? '';
-;
-            try{
-                $this->runController($controller, $action);
-            }catch(httpError $e){
-                header('HTTP/1.1 '.$e->getCode().' '.$e->getMessage());
-                $this->runController('error', 'notfound');
-            }catch(Exception $e){
-                echo $e->getMessage();
-            }
-
-            $this->controller->{$this->action}();
-        }
         
         private function runController($controller, $action)
         {
@@ -77,7 +60,28 @@
                 throw new httpError("Action -> ($action) doesn't exists", 404);
             }
 
+            
             $this->action = $action;
-
         }
+
+        public function run($config)
+        {
+            $this->config = $config;
+            $controller = $this->inputs->get['c'] ?? core::app()->defaultController ?? '';
+            $action     = $this->inputs->get['a'] ?? core::app()->defaultAction ?? '';
+
+            try{
+                $this->runController($controller, $action);
+            }catch(httpError $e){
+                header('HTTP/1.1 '.$e->getCode().' '.$e->getMessage());
+                $this->runController('error', 'notfound');
+            }catch(Exception $e){
+                echo $e->getMessage();
+            }
+
+            $this->controller->beforeAction();
+            $this->controller->{$this->action}();
+            $this->controller->afterAction();
+        }
+
     }

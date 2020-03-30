@@ -1,6 +1,6 @@
 <?php
 
-    class controllerError
+    class controllerError extends Controller
     {
         public function actionNotfound()
         {

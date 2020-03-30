@@ -4,4 +4,3 @@
     $config =  include './config.php';
     
     Core::app()->run($config);
-

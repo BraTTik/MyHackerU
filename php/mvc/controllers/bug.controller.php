@@ -1,6 +1,6 @@
 <?php
 
-    class controllerBug
+    class controllerBug extends Controller
     {
         public function actionBug()
         {

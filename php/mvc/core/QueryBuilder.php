@@ -1,3 +1,27 @@
+<!-- 
+    Query builder for MySQL
+
+    select()                    ===> ()='*', ('param1, param2, ...'), ['param1', 'param2', ...], ('param1','param2', ...)
+    update(table, params)       ===> ('table', ['param1' => 'value1', 'param2'=>'value2', ...])
+    delete(table, bool = false) ===> ('table') put true as second parameter for using without WHERE
+    where(params, bool = true)  ===> ('param1 = value, param2 <= value2'), (['param1 = value1', 'param2 <= value2'], bool) true is 'AND' as default, false is 'OR';
+    insert(table, params)       ===> ('table', ['param1' => 'value1', 'param2' => 'value2', ...])
+    group($fields)              ===> ('param1, param2, ...'), ('param1', 'param2', ...)
+
+    execute(strict = false) if true executes in order as written in code - good for complex query;
+
+    EXAMPLE:
+
+    $query = new QueryBuilder($host, $user, $password, $database)
+
+    $query->select('id', 'param1', 'param2')
+                        ->where(['id < 5', 'param1 = 4'])
+                        ->from('table1')
+                        ->join('table2', 'id', 'id')
+                        ->groupBy('id')
+                        ->execute();
+    RESULT ===> SELECT id, param1, param2 FROM table1 JOIN table2 ON table2.id = table1.id WHERE id < '5' AND param1 = '4' GROUP BY id
+ -->
 <?php
 
     class QueryBuilder
@@ -12,10 +36,19 @@
         private $from = [];
         private $where = [];
         private $insert = [];
+        private $group = [];
+        private $join = [];
 
-        public function __construct($dbconfig)
+        public function __construct(string $host, string $user, string $password, string $database)
         {
-            $this->db = new MsqlDB($dbconfig);
+            $this->db = mysqli_connect(
+                $host, 
+                $user, 
+                $password, 
+                $database
+             );
+
+             $this->db->query("SET NAMES 'utf8'");
         }
 
         public function select()
@@ -29,6 +62,7 @@
             }
 
             $this->select[] = $fields;
+            $this->sentences[] = $this->buildSelect();
 
             return $this;
         }
@@ -38,9 +72,7 @@
 
             $fields = $this->select[0];
             $fields = implode(', ', $fields);
-            $fields = $this->db->escape($fields);
-    
-           $this->sentences[] = 'SELECT ' . $fields;
+            $fields = $this->escape($fields);
            
            return 'SELECT ' . $fields;
             
@@ -49,6 +81,7 @@
         public function from(string $table)
         {   
             $this->from[] = $table;
+            $this->sentences[] = $this->buildFrom();
 
             return $this;
         }
@@ -56,9 +89,7 @@
         private function buildFrom()
         {
             $from = $this->from[0];
-
-            $from = $this->db->escape($from);
-            $this->sentences[] = 'FROM ' . $from;
+            $from = $this->escape($from);
 
             return 'FROM ' . $from;
         }
@@ -67,19 +98,18 @@
         {
             $this->update[] = $table;
             $this->update[] = $assoc;
+            $this->sentences[] = $this->buildUpdate();
             
             return $this;
         }
         
         private function buildUpdate()
         {
-            $table = $this->db->escape($this->update[0]);
+            $table = $this->escape($this->update[0]);
             $fields = $this->getFieldsFromAssoc($this->update[1]);
     
             $fields = implode(', ', $fields);
     
-            $this->sentences[] = 'UPDATE '.$table;
-            $this->sentences[] = 'SET '.$fields;
 
             return 'UPDATE '.$table.' SET '.$fields;
         }
@@ -88,15 +118,23 @@
         {
             $this->where['fields'] = $fields;
             $this->where['AND'] = $AND;
+            $this->sentences[] = $this->buildWhere();
+
+
             return $this;
         }
         
         private function buildWhere()
         {
+            $regex = '/([^ ][\'"a-zA-Z0-9_а-яА-Я]*)\W*?([!<=>]{1,2})\W*?([^ ][\'"a-zA-Z0-9_а-яА-Я]*)/u';
             if(is_array($this->where['fields'])){
                 $rawFields = $this->where['fields'];
                 foreach($rawFields as $value){
-                    $fields[] = $this->db->escape($value);
+                    preg_match(
+                        $regex, 
+                        $value, $matches);
+                   
+                     $fields[] = "{$matches[1]} {$matches[2]} '{$this->escape($matches[3])}'";
                 }
                 if($this->where['AND'])
                 {
@@ -105,9 +143,10 @@
                     $fields = implode(' OR ', $fields);
                 }
             }else{
-                $fields = $this->db->escape($this->where['fields']);
+                $fields = preg_replace(
+                    $regex, 
+                    '$1 $2 \'$3\'', $this->where['fields']);
             }
-            $this->sentences[] = 'WHERE ' . $fields;
 
             return 'WHERE ' . $fields;
         }
@@ -116,6 +155,7 @@
         {
             $this->insert['table'] = $table;
             $this->insert['fields'] = $assoc;
+            $this->sentences[] = $this->buildInsert();
             
             return $this;
         }
@@ -126,15 +166,12 @@
             $assoc = $this->insert['fields'];
 
             foreach($assoc as $key => $value){
-                $keys[] = $this->db->escape($key);
-                $values[] ="'".$this->db->escape($value)."'";
+                $keys[] = $this->escape($key);
+                $values[] ="'".$this->escape($value)."'";
             }
     
             $keys = implode(', ', $keys);
             $values = implode(', ', $values);
-    
-            $this->sentences[] = "INSERT INTO $table ($keys)";
-            $this->sentences[] = "VALUES ($values)";
 
             return "INSERT INTO $table ($keys) VALUES ($values)";
         }
@@ -143,19 +180,65 @@
         {
             $this->delete['table'] = $table;
             $this->delete['I_KNOW_WHAT_I_DOING'] = $I_KNOW_WHAT_I_DOING;
+            $this->sentences[] = $this->buildDelete();
+
             return $this;
         }
         
         private function buildDelete()
         {
             $table = $this->delete['table'];
-            $table = $this->db->escape($table);
-            $this->sentences[] = 'DELETE FROM '.$table;
+            $table = $this->escape($table);
 
             return 'DELETE FROM '.$table;
         }
 
-        public function getText()
+        public function join(string $table, string $table_param, string $from_table_param)
+        {
+            $this->join['table'] = $table;
+            $this->join['table_param'] = $table_param;
+            $this->join['from_table_param'] = $from_table_param;
+            $this->sentences[] = $this->buildJoin();
+
+            return $this;
+        }
+
+        private function buildJoin()
+        {
+            $rawFields = $this->join;
+            $fields = [];
+            foreach($rawFields as $key => $value){
+                $fields[$key] = $this->escape($value);
+            }
+
+            $table = $fields['table'];
+            $fromTable = $this->escape($this->from[0]);
+            $tableParam = $fields['table_param'];
+            $fromTableParam = $fields['from_table_param'];
+
+            return "JOIN $table ON $table.$tableParam = $fromTable.$fromTableParam";
+        }
+
+        public function groupBy()
+        {
+            $this->group = func_get_args();
+            $this->sentences[] = $this->buildGroup();
+            
+            return $this;
+        }
+
+        private function buildGroup()
+        {
+            $rawFields = $this->group;
+            $fields = [];
+            foreach($rawFields as $value){
+                $fields[] = $this->escape($value);
+            }
+
+            return 'GROUP BY '.implode(', ', $fields);
+        }
+
+        public function getText($strict = false)
         {
             $query = '';
             if($this->insert){
@@ -175,25 +258,35 @@
             if($this->from){
                 $query .= ' '.$this->buildFrom().' ';
             }
+            if($this->join){
+                $query .= ' '.$this->buildJoin().' ';
+            }
             if($this->where){
                 $query .= ' '.$this->buildWhere().' ';
+            }
+            if($this->group){
+                $query .= ' '.$this->buildGroup().' ';
+            }
+
+            if($strict){
+                return implode(' ', $this->sentences);
             }
 
             return $query;
         }
 
         
-        public function execute()
+        public function execute($strict = false)
         {  
-            $sql = $this->getText();
-            
+            $sql = $this->getText($strict);
+            //echo $sql;
             $result = $this->db->query($sql);
 
             $out = [];
             if($result === false){
-                echo 'Fail: '.$sql;
+                echo '<b>Fail:</b> '.$sql;
             }else{
-                $out = $this->db->fetchAssoc($result);
+                $out = $this->getAssoc($result);
             }
             $this->cleanStatements();
 
@@ -204,8 +297,8 @@
         {
             $fields = [];
             foreach($assoc as $key => $value){
-                $key = $this->db->escape($key);
-                $value = "'".$this->db->escape($value)."'";
+                $key = $this->escape($key);
+                $value = "'".$this->escape($value)."'";
                 $fields[] = "$key = $value";
             }
 
@@ -219,5 +312,24 @@
             $this->delete    = [];
             $this->from      = [];
             $this->insert    = [];
+        }
+
+        private function escape($sql)
+        {
+            return mysqli_escape_string($this->db, $sql);
+        }
+
+        private function getAssoc($result)
+        {
+            $out = [];
+            if($result){
+                while($row = mysqli_fetch_assoc($result)){
+                    $out[] = $row;
+                }
+            } else {
+                $out = 'По вашему запросу ничего не найдено';
+            }
+
+            return $out;
         }
     }
