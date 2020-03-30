@@ -7,9 +7,12 @@
     where(params, bool = true)  ===> ('param1 = value, param2 <= value2'), (['param1 = value1', 'param2 <= value2'], bool) true is 'AND' as default, false is 'OR';
     insert(table, params)       ===> ('table', ['param1' => 'value1', 'param2' => 'value2', ...])
     group($fields)              ===> ('param1, param2, ...'), ('param1', 'param2', ...)
+    orderBy()                   ===> ('param1', 'param2', ...)
+    limit()                     ===> ('param1', 'param2')
 
     execute(strict = false) if true executes in order as written in code - good for complex query;
 
+------------------------------------------------------------------------------------------------------------------------
     EXAMPLE:
 
     $query = new QueryBuilder($host, $user, $password, $database)
@@ -20,7 +23,8 @@
                         ->join('table2', 'id', 'id')
                         ->groupBy('id')
                         ->execute();
-    RESULT ===> SELECT id, param1, param2 FROM table1 JOIN table2 ON table2.id = table1.id WHERE id < '5' AND param1 = '4' GROUP BY id
+    RESULT: ===> SELECT id, param1, param2 FROM table1 JOIN table2 ON table2.id = table1.id WHERE id < '5' AND param1 = '4' GROUP BY id
+ ----------------------------------------------------------------------------------------------------------------------
  -->
 <?php
 
@@ -331,6 +335,7 @@
             $out = [];
             if($result === false){
                 echo '<b>Fail:</b> '.$sql;
+                $out = 'Запрос не верен';
             }else{
                 $out = $this->getAssoc($result);
             }

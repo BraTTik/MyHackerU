@@ -27,7 +27,7 @@
                         ->join('table2', 'id', 'id')
                         ->orderBy('id')
                         ->limit(3, 4)
-                        ->getText();
+                        ->execute();
             var_dump($res);
 
         }
