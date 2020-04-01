@@ -3,7 +3,7 @@
     class MsqlDB
     {
         private $connection;
-
+        
         public function __construct($conf)
         {
            $this->connection = mysqli_connect(

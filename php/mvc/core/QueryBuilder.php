@@ -363,6 +363,11 @@
             $this->delete    = [];
             $this->from      = [];
             $this->insert    = [];
+            $this->where     = [];
+            $this->groupBy   = [];
+            $this->orderBy   = [];
+            $this->limit     = [];
+            $this->join      = [];
         }
 
         private function escape($sql)
@@ -373,14 +378,13 @@
         private function getAssoc($result)
         {
             $out = [];
-            if($result){
+            if(!is_bool($result)){
                 while($row = mysqli_fetch_assoc($result)){
                     $out[] = $row;
                 }
-            } else {
-                $out = 'По вашему запросу ничего не найдено';
+            }else{
+                $out = $result;
             }
-
             return $out;
         }
     }

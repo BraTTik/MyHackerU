@@ -4,6 +4,20 @@
     {
         protected $layoutFile    = 'index.php';
         protected $templateFile  = '';
+        public $models = [];
+
+        protected function getModel(string $modelName, bool $newModel = false)
+        {
+            include_once Core::app()->modelsPath.$modelName.'.php';
+            if($newModel){
+                return new $modelName;
+            }
+            if(!isset($this->models[$modelName])){
+                $this->models[$modelName] = new $modelName;
+            }
+
+            return $this->models[$modelName];
+        }
 
         protected function renderLayout(array $data = [])
         {
