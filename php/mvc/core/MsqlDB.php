@@ -47,7 +47,7 @@
                     $out[] = $row;
                 }
             } else {
-                $out = 'По вашему запросу ничего не найдено';
+                $out = false;
             }
 
             return $out;

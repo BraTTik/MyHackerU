@@ -37,13 +37,13 @@
         private $select = [];
         private $update = [];
         private $delete = [];
-        private $from = [];
-        private $where = [];
+        private $from   = [];
+        private $where  = [];
         private $insert = [];
-        private $group = [];
-        private $join = [];
-        private $order = [];
-        private $limit = [];
+        private $group  = [];
+        private $join   = [];
+        private $order  = [];
+        private $limit  = [];
 
         public function __construct(string $host, string $user, string $password, string $database)
         {
@@ -335,9 +335,9 @@
             $out = [];
             if($result === false){
                 echo '<b>Fail:</b> '.$sql;
-                $out = 'Запрос не верен';
+                $out = false;
             }else{
-                $out = $this->getAssoc($result);
+                $out = $this->extractResult($result);
             }
             $this->cleanStatements();
 
@@ -368,6 +368,7 @@
             $this->orderBy   = [];
             $this->limit     = [];
             $this->join      = [];
+            $this->sentences = [];
         }
 
         private function escape($sql)
@@ -375,7 +376,7 @@
             return mysqli_escape_string($this->db, $sql);
         }
 
-        private function getAssoc($result)
+        private function extractResult($result)
         {
             $out = [];
             if(!is_bool($result)){
